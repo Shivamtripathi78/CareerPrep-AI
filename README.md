@@ -86,7 +86,3 @@ The application creates `students.csv` automatically when student records are sa
 Shivam Tripathi
 
 GitHub: [@Shivamtripathi78](https://github.com/Shivamtripathi78)
-
-## 📅 30-Day GitHub Project Challenge
-
-Day 7 of my 30-Day GitHub Project Challenge.
