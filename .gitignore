@@ -1,5 +1,59 @@
-__pycache__/
-*.pyc
+# Flutter / Dart
+
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# Python virtual environments
+
 .venv/
 venv/
-students.csv
+env/
+ENV/
+careerprep_ai_backend/.venv/
+
+# Python cache and generated files
+
+**pycache**/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# IDEs
+
+.idea/
+.vscode/
+*.iml
+
+# OS-generated files
+
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Local secrets and private configuration
+
+.env
+.env.*
+!.env.example
+*.jks
+*.keystore
+
+# Personal documents and local exports
+
+*.resume.pdf
+personal-resume*
+
+# Logs and temporary files
+
+*.log
+*.tmp
+*.temp

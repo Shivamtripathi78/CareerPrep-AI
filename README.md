@@ -1,88 +1,94 @@
-# 📊 Python Student Performance Analyzer
+# CareerPrep AI
 
-A Python command-line application that analyzes student marks, calculates academic performance, assigns grades, and generates class statistics.
+CareerPrep AI is a Flutter-based interview-preparation and resume-feedback app. It brings interview practice, quiz-based learning, progress tracking, and local resume analysis into one place.
 
-## ✨ Features
+> **Project status:** Portfolio project in active development. Scores and recommendations from the Resume Analyzer are rule-based estimates, not a guarantee of how a real applicant-tracking system (ATS) will score a resume.
 
-- Add student records
-- Store marks for multiple subjects
-- Calculate total and average marks
-- Assign grades automatically
-- Identify the class topper
-- Calculate class performance statistics
-- Search for students by name
-- Store records in a CSV file
-- Load previously saved records
+## Features
 
-## 🛠️ Technologies Used
+- **Interview question bank:** 100 questions across Flutter, Dart, Programming, and HR, with difficulty levels, answers, and explanations.
+- **Practice and quizzes:** Choose a category, difficulty, and question count; answer one question at a time; navigate, skip, revisit, and review answers.
+- **Bookmarks and revision:** Save questions and revisit bookmarked or previously missed questions.
+- **Quiz history and analytics:** Review past attempts and see score/performance summaries.
+- **Personalized practice:** Use local progress and quiz history to identify categories that need more practice.
+- **Resume Analyzer:** Upload a PDF resume, compare its extracted text with a job description, inspect matched/missing skills, review an ATS-style estimate, and get a rule-based action plan and interview prompts.
+- **Resume checklist:** Check common resume-content essentials.
+- **Local persistence:** Selected practice data and preferences are stored on the device/browser using SharedPreferences.
 
-- Python
-- CSV file handling
-- Functions
-- Lists and dictionaries
-- Data analysis
-- Input validation
+## Tech stack
 
-## 🚀 Getting Started
+- Flutter and Dart
+- Material 3 widgets
+- `shared_preferences` for local persistence
+- `file_picker` for selecting a resume PDF
+- Syncfusion Flutter PDF for text extraction
 
-### Prerequisites
+Check `pubspec.yaml` for the exact dependency versions used by your checkout.
 
-Python 3 must be installed.
+## Run locally
 
-### Installation
-
-Clone the repository:
+Install the Flutter SDK and verify your setup:
 
 ```bash
-git clone https://github.com/Shivamtripathi78/python-student-performance-analyzer.git
+flutter doctor
 ```
 
-Navigate to the project directory:
+From the project root:
 
 ```bash
-cd python-student-performance-analyzer
+flutter pub get
+ dart format lib/main.dart
+flutter analyze
+flutter test
+flutter run -d chrome
 ```
 
-Run the application:
+To run with the web-server device instead:
 
 ```bash
-python main.py
+flutter run -d web-server --web-port 8080
 ```
 
-## 📂 Project Structure
+Open the local address printed by Flutter in your browser.
 
-```text
-python-student-performance-analyzer/
-├── main.py
-├── README.md
-├── .gitignore
-└── students.csv
+## Resume privacy and scoring notes
+
+Resume text extraction and job-description matching are designed to run locally in the app; this version does not require a paid AI API. Avoid uploading resumes containing information you do not want stored or processed in your browser. The ATS-style score is a heuristic estimate based on detected keywords and resume-content checks. It is not an actual ATS result and should not be presented as one.
+
+## Quality checks
+
+Before pushing changes, run:
+
+```bash
+dart format lib test
+flutter analyze
+flutter test
+flutter build web
 ```
 
-The application creates `students.csv` automatically when student records are saved.
+See [`TESTING_CHECKLIST.md`](TESTING_CHECKLIST.md) for manual acceptance checks and [`DEPLOYMENT.md`](DEPLOYMENT.md) for web deployment notes.
 
-## 📈 Grading System
+## Suggested screenshots
 
-| Average Marks | Grade |
-|---|---|
-| 90–100 | A+ |
-| 80–89.99 | A |
-| 70–79.99 | B |
-| 60–69.99 | C |
-| 40–59.99 | D |
-| Below 40 | F |
+Add real screenshots from your running app to `screenshots/` and update this section:
 
-## 🎯 Learning Outcomes
+- `screenshots/dashboard.png` — dashboard and feature navigation
+- `screenshots/quiz.png` — active quiz question
+- `screenshots/progress.png` — progress and personalized practice
+- `screenshots/resume-analyzer.png` — resume analysis results
 
-- Python functions and modular programming
-- CSV file reading and writing
-- Lists and dictionaries
-- Data processing and calculations
-- Searching and sorting concepts
-- Input validation
+Only use screenshots from the current working version. Do not include real personal resumes, email addresses, phone numbers, or other private information.
 
-## 👨‍💻 Author
+## Roadmap
 
-Shivam Tripathi
+- [x] Interview question bank and quiz workflow
+- [x] Bookmarks, quiz history, and progress tracking
+- [x] Local resume analysis and skill-gap recommendations
+- [x] Personalized practice and revision mode
+- [x] Responsive/error-state improvements
+- [ ] Expand automated unit and widget coverage
+- [ ] Capture portfolio screenshots and publish a live demo
 
-GitHub: [@Shivamtripathi78](https://github.com/Shivamtripathi78)
+## License
+
+Choose and add a license before presenting this repository as open source. Do not claim a license that has not been added.
