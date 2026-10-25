@@ -19,10 +19,10 @@ class CareerPrepApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
-        scaffoldBackgroundColor: const Color(0xFFF7F8FC),
+        scaffoldBackgroundColor: const Color(0xFFF4F6FA),
         colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF6254E8),
-          primary: const Color(0xFF6254E8),
+          seedColor: const Color(0xFF635BDB),
+          primary: const Color(0xFF635BDB),
           surface: Colors.white,
         ),
         fontFamily: 'Arial',
@@ -1600,6 +1600,16 @@ class CareerPrepHome extends StatefulWidget {
 class _CareerPrepHomeState extends State<CareerPrepHome> {
   int selectedPage = 0;
   String selectedCategory = 'All';
+  String selectedCareerTrack = 'Software Developer';
+  String selectedJobRole = 'Software Developer';
+  String selectedTechnology = 'Flutter';
+  String selectedCompany = 'Google';
+  String selectedPreparationFocus = 'Technology & programming';
+  final TextEditingController _preparationTopicController =
+      TextEditingController();
+  final TextEditingController _careerChatController = TextEditingController();
+  String careerChatReply =
+      'Hi! Tell me your target role, current skill level, or interview concern. I can suggest a preparation path using the sections in this app.';
   String searchQuery = '';
   final TextEditingController _practiceSearchController =
       TextEditingController();
@@ -2023,6 +2033,8 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
   @override
   void dispose() {
     _practiceSearchController.dispose();
+    _careerChatController.dispose();
+    _preparationTopicController.dispose();
     super.dispose();
   }
 
@@ -2062,7 +2074,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
           bottomNavigationBar: isDesktop
               ? null
               : NavigationBar(
-                  selectedIndex: selectedPage,
+                  selectedIndex: selectedPage.clamp(0, 5),
                   onDestinationSelected: (index) {
                     _practiceSearchController.clear();
                     setState(() {
@@ -2111,109 +2123,141 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
 
   Widget _buildSidebar() {
     return Container(
-      width: 245,
+      width: 258,
       decoration: const BoxDecoration(
-        color: Colors.white,
-        border: Border(right: BorderSide(color: Color(0xFFEAECF3))),
+        color: Color(0xFF151B2B),
+        border: Border(right: BorderSide(color: Color(0xFF252D40))),
       ),
       child: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(22, 28, 18, 34),
-              child: Row(
-                children: [
-                  Container(
-                    width: 42,
-                    height: 42,
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF6254E8),
-                      borderRadius: BorderRadius.circular(13),
-                    ),
-                    child: const Icon(
-                      Icons.rocket_launch_rounded,
-                      color: Colors.white,
-                    ),
-                  ),
-                  const SizedBox(width: 11),
-                  const Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'CareerPrep',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w800,
-                            fontSize: 17,
-                          ),
+        child: SingleChildScrollView(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(minHeight: 0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(22, 28, 18, 34),
+                  child: Row(
+                    children: [
+                      Container(
+                        width: 42,
+                        height: 42,
+                        decoration: BoxDecoration(
+                          color: const Color(0xFF756CF0),
+                          borderRadius: BorderRadius.circular(13),
                         ),
-                        Text(
-                          'AI CAREER COMPANION',
-                          style: TextStyle(
-                            fontSize: 9,
-                            letterSpacing: 1.0,
-                            color: Color(0xFF77798C),
-                          ),
+                        child: const Icon(
+                          Icons.rocket_launch_rounded,
+                          color: Colors.white,
                         ),
-                      ],
-                    ),
+                      ),
+                      const SizedBox(width: 11),
+                      const Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'CareerPrep',
+                              style: TextStyle(
+                                fontWeight: FontWeight.w800,
+                                fontSize: 17,
+                              ),
+                            ),
+                            Text(
+                              'AI CAREER COMPANION',
+                              style: TextStyle(
+                                fontSize: 9,
+                                letterSpacing: 1.0,
+                                color: Color(0xFFA8B0C4),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.fromLTRB(22, 0, 16, 10),
-              child: Text(
-                'WORKSPACE',
-                style: TextStyle(
-                  color: Color(0xFF9294A5),
-                  fontWeight: FontWeight.w700,
-                  fontSize: 11,
-                  letterSpacing: 1.2,
                 ),
-              ),
-            ),
-            _navItem(0, Icons.grid_view_rounded, 'Dashboard'),
-            _navItem(1, Icons.code_rounded, 'Interview Practice'),
-            _navItem(2, Icons.bookmark_outline_rounded, 'Bookmarks'),
-            _navItem(3, Icons.insights_rounded, 'My Progress'),
-            _navItem(4, Icons.emoji_events_outlined, 'Take a Quiz'),
-            _navItem(5, Icons.description_outlined, 'Resume Analyzer'),
-            const Spacer(),
-            Container(
-              margin: const EdgeInsets.all(16),
-              padding: const EdgeInsets.all(15),
-              decoration: BoxDecoration(
-                color: const Color(0xFFF0EEFF),
-                borderRadius: BorderRadius.circular(16),
-              ),
-              child: const Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Icon(
-                    Icons.lightbulb_outline_rounded,
-                    color: Color(0xFF6254E8),
-                    size: 28,
-                  ),
-                  SizedBox(height: 10),
-                  Text(
-                    'Small steps, big careers.',
-                    style: TextStyle(fontWeight: FontWeight.w800, fontSize: 13),
-                  ),
-                  SizedBox(height: 5),
-                  Text(
-                    'Practice consistently and build confidence.',
+                const Padding(
+                  padding: EdgeInsets.fromLTRB(22, 0, 16, 10),
+                  child: Text(
+                    'YOUR WORKSPACE',
                     style: TextStyle(
-                      fontSize: 12,
-                      height: 1.5,
-                      color: Color(0xFF68617F),
+                      color: Color(0xFF7F8AA3),
+                      fontWeight: FontWeight.w700,
+                      fontSize: 11,
+                      letterSpacing: 1.2,
                     ),
                   ),
-                ],
-              ),
+                ),
+                _navItem(0, Icons.grid_view_rounded, 'Dashboard'),
+                _navItem(1, Icons.code_rounded, 'Interview Practice'),
+                _navItem(2, Icons.bookmark_outline_rounded, 'Bookmarks'),
+                _navItem(3, Icons.insights_rounded, 'My Progress'),
+                _navItem(4, Icons.emoji_events_outlined, 'Take a Quiz'),
+                _navItem(5, Icons.description_outlined, 'Resume Analyzer'),
+                const Padding(
+                  padding: EdgeInsets.fromLTRB(22, 18, 16, 10),
+                  child: Text(
+                    'EXPLORE & PREPARE',
+                    style: TextStyle(
+                      color: Color(0xFF7F8AA3),
+                      fontWeight: FontWeight.w700,
+                      fontSize: 11,
+                      letterSpacing: 1.2,
+                    ),
+                  ),
+                ),
+                _navItem(6, Icons.route_outlined, 'Career Tracks'),
+                _navItem(7, Icons.badge_outlined, 'Job Roles'),
+                _navItem(8, Icons.business_outlined, 'Company Prep'),
+                _navItem(9, Icons.memory_outlined, 'Technologies'),
+                _navItem(10, Icons.fact_check_outlined, 'Assessment Center'),
+                _navItem(
+                  11,
+                  Icons.chat_bubble_outline_rounded,
+                  'Career Chatbot',
+                ),
+                const SizedBox(height: 18),
+                Container(
+                  margin: const EdgeInsets.all(16),
+                  padding: const EdgeInsets.all(15),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFF20283A),
+                    border: Border.all(color: const Color(0xFF30394F)),
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: const Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Icon(
+                        Icons.lightbulb_outline_rounded,
+                        color: Color(0xFFB9B4FF),
+                        size: 28,
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        'Small steps, big careers.',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w800,
+                          fontSize: 13,
+                          color: Colors.white,
+                        ),
+                      ),
+                      SizedBox(height: 5),
+                      Text(
+                        'Practice consistently and build confidence.',
+                        style: TextStyle(
+                          fontSize: 12,
+                          height: 1.5,
+                          color: Color(0xFFADB6C9),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );
@@ -2225,7 +2269,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 3),
       child: Material(
-        color: selected ? const Color(0xFFF0EEFF) : Colors.transparent,
+        color: selected ? const Color(0xFF2A3048) : Colors.transparent,
         borderRadius: BorderRadius.circular(12),
         child: InkWell(
           borderRadius: BorderRadius.circular(12),
@@ -2244,8 +2288,8 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                   icon,
                   size: 21,
                   color: selected
-                      ? const Color(0xFF6254E8)
-                      : const Color(0xFF73758A),
+                      ? const Color(0xFFB9B4FF)
+                      : const Color(0xFFA8B0C4),
                 ),
                 const SizedBox(width: 12),
                 Expanded(
@@ -2254,9 +2298,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                     style: TextStyle(
                       fontWeight: selected ? FontWeight.w700 : FontWeight.w500,
                       fontSize: 13,
-                      color: selected
-                          ? const Color(0xFF6254E8)
-                          : const Color(0xFF55576B),
+                      color: selected ? Colors.white : const Color(0xFFD0D5E2),
                     ),
                   ),
                 ),
@@ -2270,8 +2312,8 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
 
   Widget _buildTopBar(bool isDesktop) {
     return Container(
-      height: 76,
-      padding: EdgeInsets.symmetric(horizontal: isDesktop ? 36 : 18),
+      height: 72,
+      padding: EdgeInsets.symmetric(horizontal: isDesktop ? 32 : 18),
       decoration: const BoxDecoration(
         color: Colors.white,
         border: Border(bottom: BorderSide(color: Color(0xFFEAECF3))),
@@ -2301,8 +2343,18 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                 'My Progress',
                 'Take a Quiz',
                 'Resume Analyzer',
-              ][selectedPage.clamp(0, 5)],
-              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
+                'Career Tracks',
+                'Job Roles',
+                'Company Preparation',
+                'Technologies',
+                'Assessment Center',
+                'Career Chatbot',
+              ][selectedPage.clamp(0, 11)],
+              style: const TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w800,
+                letterSpacing: -0.3,
+              ),
             ),
           ),
           const Icon(
@@ -2332,9 +2384,1004 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
         return _buildQuizPage();
       case 5:
         return _buildResumeAnalyzerPage(isDesktop);
+      case 6:
+        return _buildCareerTracksPage(isDesktop);
+      case 7:
+        return _buildJobRolesPage(isDesktop);
+      case 8:
+        return _buildCompanyPrepPage(isDesktop);
+      case 9:
+        return _buildTechnologiesPage(isDesktop);
+      case 10:
+        return _buildAssessmentCenterPage(isDesktop);
+      case 11:
+        return _buildCareerChatbotPage(isDesktop);
       default:
         return _buildDashboard(isDesktop);
     }
+  }
+
+  Widget _buildExploreGrid(bool isDesktop) {
+    final items = <Map<String, dynamic>>[
+      {
+        'title': 'Career Tracks',
+        'subtitle': 'Follow a role-based roadmap',
+        'icon': Icons.route_rounded,
+        'page': 6,
+      },
+      {
+        'title': 'Job Roles',
+        'subtitle': 'Explore skills for different careers',
+        'icon': Icons.badge_outlined,
+        'page': 7,
+      },
+      {
+        'title': 'Company Prep',
+        'subtitle': 'Plan company-focused preparation',
+        'icon': Icons.business_outlined,
+        'page': 8,
+      },
+      {
+        'title': 'Technologies',
+        'subtitle': 'Choose a language or tech stack',
+        'icon': Icons.memory_rounded,
+        'page': 9,
+      },
+      {
+        'title': 'Assessment Center',
+        'subtitle': 'Practice quizzes and test skills',
+        'icon': Icons.fact_check_outlined,
+        'page': 10,
+      },
+      {
+        'title': 'Career Chatbot',
+        'subtitle': 'Get a guided next-step suggestion',
+        'icon': Icons.chat_bubble_outline_rounded,
+        'page': 11,
+      },
+    ];
+    return GridView.builder(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      itemCount: items.length,
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: isDesktop ? 3 : 1,
+        crossAxisSpacing: 14,
+        mainAxisSpacing: 14,
+        mainAxisExtent: 112,
+      ),
+      itemBuilder: (context, index) {
+        final item = items[index];
+        return InkWell(
+          borderRadius: BorderRadius.circular(16),
+          onTap: () => setState(() => selectedPage = item['page'] as int),
+          child: Container(
+            padding: const EdgeInsets.all(17),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(16),
+              border: Border.all(color: const Color(0xFFE6E9F2)),
+            ),
+            child: Row(
+              children: [
+                Container(
+                  width: 46,
+                  height: 46,
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFF0EFFF),
+                    borderRadius: BorderRadius.circular(13),
+                  ),
+                  child: Icon(
+                    item['icon'] as IconData,
+                    color: const Color(0xFF635BDB),
+                  ),
+                ),
+                const SizedBox(width: 13),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        item['title'] as String,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.w800,
+                          fontSize: 14,
+                        ),
+                      ),
+                      const SizedBox(height: 5),
+                      Text(
+                        item['subtitle'] as String,
+                        style: const TextStyle(
+                          color: Color(0xFF77798C),
+                          fontSize: 12,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const Icon(
+                  Icons.arrow_forward_rounded,
+                  size: 18,
+                  color: Color(0xFF77798C),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  Widget _pageIntro(String title, String subtitle, IconData icon) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(24),
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          colors: [Color(0xFF1A2236), Color(0xFF303958)],
+        ),
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Row(
+        children: [
+          Container(
+            width: 52,
+            height: 52,
+            decoration: BoxDecoration(
+              color: const Color(0xFF756CF0),
+              borderRadius: BorderRadius.circular(15),
+            ),
+            child: Icon(icon, color: Colors.white, size: 27),
+          ),
+          const SizedBox(width: 16),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 23,
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
+                const SizedBox(height: 7),
+                Text(
+                  subtitle,
+                  style: const TextStyle(
+                    color: Color(0xFFD4D9E7),
+                    height: 1.45,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _choiceCards({
+    required List<Map<String, String>> choices,
+    required String selected,
+    required ValueChanged<String> onSelect,
+    required bool isDesktop,
+  }) {
+    return GridView.builder(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      itemCount: choices.length,
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: isDesktop ? 3 : 1,
+        crossAxisSpacing: 14,
+        mainAxisSpacing: 14,
+        mainAxisExtent: 132,
+      ),
+      itemBuilder: (context, index) {
+        final choice = choices[index];
+        final name = choice['name']!;
+        final active = selected == name;
+        return InkWell(
+          borderRadius: BorderRadius.circular(16),
+          onTap: () => onSelect(name),
+          child: Container(
+            padding: const EdgeInsets.all(18),
+            decoration: BoxDecoration(
+              color: active ? const Color(0xFFF0EFFF) : Colors.white,
+              borderRadius: BorderRadius.circular(16),
+              border: Border.all(
+                color: active
+                    ? const Color(0xFF635BDB)
+                    : const Color(0xFFE6E9F2),
+                width: active ? 1.5 : 1,
+              ),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Expanded(
+                      child: Text(
+                        name,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.w800,
+                          fontSize: 15,
+                        ),
+                      ),
+                    ),
+                    if (active)
+                      const Icon(
+                        Icons.check_circle_rounded,
+                        color: Color(0xFF635BDB),
+                        size: 19,
+                      ),
+                  ],
+                ),
+                const SizedBox(height: 9),
+                Expanded(
+                  child: Text(
+                    choice['description'] ?? '',
+                    style: const TextStyle(
+                      color: Color(0xFF77798C),
+                      fontSize: 12,
+                      height: 1.45,
+                    ),
+                  ),
+                ),
+                Text(
+                  choice['tag'] ?? 'Explore',
+                  style: const TextStyle(
+                    color: Color(0xFF635BDB),
+                    fontSize: 11,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  Widget _buildCareerTracksPage(bool isDesktop) {
+    final tracks = [
+      {
+        'name': 'Software Developer',
+        'description': 'Programming fundamentals, DSA, projects, and technical interviews.',
+        'tag': 'Coding + problem solving',
+      },
+      {
+        'name': 'Frontend Developer',
+        'description': 'HTML, CSS, JavaScript, UI frameworks, accessibility, and web projects.',
+        'tag': 'Web development',
+      },
+      {
+        'name': 'Backend Developer',
+        'description': 'APIs, databases, authentication, system basics, and server-side design.',
+        'tag': 'APIs + databases',
+      },
+      {
+        'name': 'Data Analyst',
+        'description': 'SQL, spreadsheets, statistics, dashboards, and communicating insights.',
+        'tag': 'Data + analytics',
+      },
+      {
+        'name': 'AI / ML Engineer',
+        'description': 'Python, data preparation, model evaluation, ML concepts, and deployment basics.',
+        'tag': 'AI + machine learning',
+      },
+      {
+        'name': 'QA / Test Engineer',
+        'description': 'Test design, bug reports, automation concepts, and quality workflows.',
+        'tag': 'Testing',
+      },
+      {
+        'name': 'Cloud / DevOps',
+        'description': 'Linux, networking, cloud concepts, CI/CD, containers, and monitoring.',
+        'tag': 'Cloud + operations',
+      },
+      {
+        'name': 'Cybersecurity Analyst',
+        'description': 'Networking, security fundamentals, risk awareness, and defensive practices.',
+        'tag': 'Security fundamentals',
+      },
+      {
+        'name': 'Mobile App Developer',
+        'description': 'Mobile UI, app state, APIs, storage, testing, and publishing workflows.',
+        'tag': 'Android / iOS',
+      },
+    ];
+    final selected = tracks.firstWhere(
+      (e) => e['name'] == selectedCareerTrack,
+      orElse: () => tracks.first,
+    );
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        _pageIntro(
+          'Choose your career track',
+          'Select a direction to see a starter roadmap. You can change tracks whenever your goals change.',
+          Icons.route_rounded,
+        ),
+        const SizedBox(height: 24),
+        _choiceCards(
+          choices: tracks,
+          selected: selectedCareerTrack,
+          onSelect: (v) => setState(() => selectedCareerTrack = v),
+          isDesktop: isDesktop,
+        ),
+        const SizedBox(height: 22),
+        _sectionHeading(
+          'Your starter roadmap',
+          'A practical sequence for ${selected['name']}.',
+        ),
+        const SizedBox(height: 14),
+        _roadmapCard([
+          'Review the core concepts and vocabulary',
+          'Practice beginner tasks and explain your reasoning',
+          'Build one small project that demonstrates the skills',
+          'Complete timed questions and review mistakes',
+          'Prepare project stories and role-specific interview answers',
+        ]),
+        const SizedBox(height: 16),
+        FilledButton.icon(
+          onPressed: () => openPractice(category: 'All'),
+          icon: const Icon(Icons.play_arrow_rounded),
+          label: const Text('Start with available practice questions'),
+        ),
+        const SizedBox(height: 10),
+        const Text(
+          'This is a starter roadmap, not a guarantee of hiring requirements. Tailor it to the job description you are targeting.',
+          style: TextStyle(color: Color(0xFF77798C), fontSize: 12),
+        ),
+      ],
+    );
+  }
+
+  Widget _roadmapCard(List<String> steps) => Container(
+    width: double.infinity,
+    padding: const EdgeInsets.all(20),
+    decoration: BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(16),
+      border: Border.all(color: const Color(0xFFE6E9F2)),
+    ),
+    child: Column(
+      children: [
+        for (int i = 0; i < steps.length; i++)
+          Padding(
+            padding: EdgeInsets.only(bottom: i == steps.length - 1 ? 0 : 14),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CircleAvatar(
+                  radius: 14,
+                  backgroundColor: const Color(0xFFF0EFFF),
+                  child: Text(
+                    '${i + 1}',
+                    style: const TextStyle(
+                      color: Color(0xFF635BDB),
+                      fontWeight: FontWeight.w800,
+                      fontSize: 12,
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 4),
+                    child: Text(steps[i], style: const TextStyle(height: 1.4)),
+                  ),
+                ),
+              ],
+            ),
+          ),
+      ],
+    ),
+  );
+
+  Widget _buildJobRolesPage(bool isDesktop) {
+    final roles = [
+      {
+        'name': 'Software Engineer',
+        'description':
+            'DSA, programming fundamentals, OOP, projects, and debugging.',
+        'tag': 'Technical interview',
+      },
+      {
+        'name': 'Frontend Engineer',
+        'description': 'JavaScript, browser basics, UI frameworks, CSS, and accessibility.',
+        'tag': 'Web',
+      },
+      {
+        'name': 'Backend Engineer',
+        'description':
+            'REST APIs, databases, authentication, caching, and reliability.',
+        'tag': 'Backend',
+      },
+      {
+        'name': 'Data Analyst',
+        'description': 'SQL, statistics, data cleaning, visualization, and business reasoning.',
+        'tag': 'Data',
+      },
+      {
+        'name': 'ML Engineer',
+        'description': 'Python, ML fundamentals, evaluation, data pipelines, and deployment.',
+        'tag': 'AI / ML',
+      },
+      {
+        'name': 'QA Engineer',
+        'description': 'Test cases, regression, bug lifecycle, automation, and edge cases.',
+        'tag': 'Quality',
+      },
+      {
+        'name': 'Product / Business Analyst',
+        'description': 'Requirements, stakeholder communication, metrics, and structured problem solving.',
+        'tag': 'Business',
+      },
+      {
+        'name': 'Technical Support',
+        'description': 'Troubleshooting, networking basics, customer communication, and documentation.',
+        'tag': 'Support',
+      },
+      {
+        'name': 'Mobile Developer',
+        'description': 'App architecture, state, API integration, local storage, and app testing.',
+        'tag': 'Mobile',
+      },
+    ];
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        _pageIntro(
+          'Explore job roles',
+          'Compare the kinds of skills commonly associated with a role before you start preparing.',
+          Icons.badge_outlined,
+        ),
+        const SizedBox(height: 24),
+        _choiceCards(
+          choices: roles,
+          selected: selectedJobRole,
+          onSelect: (v) => setState(() => selectedJobRole = v),
+          isDesktop: isDesktop,
+        ),
+        const SizedBox(height: 20),
+        Container(
+          padding: const EdgeInsets.all(18),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(16),
+            border: Border.all(color: const Color(0xFFE6E9F2)),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Selected role: $selectedJobRole',
+                style: const TextStyle(
+                  fontSize: 17,
+                  fontWeight: FontWeight.w800,
+                ),
+              ),
+              const SizedBox(height: 8),
+              const Text(
+                'Next steps',
+                style: TextStyle(fontWeight: FontWeight.w700),
+              ),
+              const SizedBox(height: 8),
+              const Text(
+                '1. Compare the role with a real job description.\n2. Identify skills you already have and skills to learn.\n3. Practice relevant questions and prepare project examples.',
+                style: TextStyle(height: 1.6, color: Color(0xFF77798C)),
+              ),
+              const SizedBox(height: 14),
+              Wrap(
+                spacing: 10,
+                runSpacing: 10,
+                children: [
+                  FilledButton.icon(
+                    onPressed: () => setState(() => selectedPage = 6),
+                    icon: const Icon(Icons.route_rounded),
+                    label: const Text('View career tracks'),
+                  ),
+                  OutlinedButton.icon(
+                    onPressed: () => setState(() => selectedPage = 5),
+                    icon: const Icon(Icons.description_outlined),
+                    label: const Text('Match a job description'),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildCompanyPrepPage(bool isDesktop) {
+    final companies = [
+      {
+        'name': 'Google',
+        'description': 'Use the role description to plan coding, problem-solving, and behavioral preparation.',
+        'tag': 'Example employer',
+      },
+      {
+        'name': 'Microsoft',
+        'description': 'Review fundamentals, coding practice, collaboration stories, and role-specific skills.',
+        'tag': 'Example employer',
+      },
+      {
+        'name': 'Amazon',
+        'description': 'Prepare technical fundamentals and concise examples of ownership and decision-making.',
+        'tag': 'Example employer',
+      },
+      {
+        'name': 'TCS',
+        'description': 'Check the specific hiring process and prepare aptitude, programming, and communication as applicable.',
+        'tag': 'Example employer',
+      },
+      {
+        'name': 'Infosys',
+        'description': 'Use the official role details to guide aptitude, coding, and interview practice.',
+        'tag': 'Example employer',
+      },
+      {
+        'name': 'Accenture',
+        'description': 'Review role requirements and prepare assessment, communication, and technical fundamentals as applicable.',
+        'tag': 'Example employer',
+      },
+    ];
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        _pageIntro(
+          'Company preparation',
+          'Choose an example employer and build a preparation checklist around its actual job description.',
+          Icons.business_outlined,
+        ),
+        const SizedBox(height: 24),
+        _choiceCards(
+          choices: companies,
+          selected: selectedCompany,
+          onSelect: (v) => setState(() => selectedCompany = v),
+          isDesktop: isDesktop,
+        ),
+        const SizedBox(height: 20),
+        _sectionHeading(
+          '$selectedCompany preparation checklist',
+          'General guidance only—interview rounds and questions vary by role, team, location, and hiring cycle.',
+        ),
+        const SizedBox(height: 14),
+        _roadmapCard([
+          'Find the current official job posting and eligibility criteria',
+          'Highlight required skills and tools from the job description',
+          'Practice relevant coding, aptitude, or role tasks',
+          'Prepare two project explanations and behavioral examples',
+          'Verify the current interview process from official recruitment communications',
+        ]),
+        const SizedBox(height: 14),
+        const Text(
+          'This section does not claim to contain verified or leaked company interview questions. Use current official recruitment information to confirm requirements.',
+          style: TextStyle(color: Color(0xFF77798C), fontSize: 12, height: 1.5),
+        ),
+        const SizedBox(height: 12),
+        FilledButton.icon(
+          onPressed: () => setState(() => selectedPage = 5),
+          icon: const Icon(Icons.description_outlined),
+          label: const Text('Analyze a job description'),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildTechnologiesPage(bool isDesktop) {
+    final technologies = [
+      {
+        'name': 'Flutter',
+        'description':
+            'Widgets, state, navigation, async, testing, and app architecture.',
+        'tag': 'Mobile UI',
+      },
+      {
+        'name': 'Dart',
+        'description':
+            'Types, collections, null safety, OOP, Futures, and Streams.',
+        'tag': 'Language',
+      },
+      {
+        'name': 'Python',
+        'description': 'Core syntax, collections, functions, OOP, files, and problem solving.',
+        'tag': 'Language',
+      },
+      {
+        'name': 'Java',
+        'description':
+            'OOP, collections, exceptions, JVM basics, and coding problems.',
+        'tag': 'Language',
+      },
+      {
+        'name': 'C++',
+        'description':
+            'STL, pointers/references, OOP, complexity, and DSA practice.',
+        'tag': 'Language',
+      },
+      {
+        'name': 'JavaScript',
+        'description': 'Scope, closures, promises, DOM, async patterns, and browser concepts.',
+        'tag': 'Web',
+      },
+      {
+        'name': 'React',
+        'description':
+            'Components, props/state, hooks, rendering, and frontend patterns.',
+        'tag': 'Framework',
+      },
+      {
+        'name': 'HTML & CSS',
+        'description':
+            'Semantic markup, layout, responsive design, and accessibility.',
+        'tag': 'Web',
+      },
+      {
+        'name': 'SQL / Databases',
+        'description': 'Queries, joins, grouping, normalization, and indexes.',
+        'tag': 'Data',
+      },
+      {
+        'name': 'Git & GitHub',
+        'description':
+            'Commits, branches, pull/push, merge conflicts, and collaboration.',
+        'tag': 'Tools',
+      },
+      {
+        'name': 'REST APIs',
+        'description': 'HTTP methods, status codes, JSON, authentication, and error handling.',
+        'tag': 'Backend',
+      },
+      {
+        'name': 'Machine Learning',
+        'description':
+            'Data preparation, train/test split, evaluation, and model basics.',
+        'tag': 'AI / ML',
+      },
+    ];
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        _pageIntro(
+          'Technologies & subjects',
+          'Pick the language, framework, or technical subject you want to focus on.',
+          Icons.memory_rounded,
+        ),
+        const SizedBox(height: 24),
+        _choiceCards(
+          choices: technologies,
+          selected: selectedTechnology,
+          onSelect: (v) => setState(() => selectedTechnology = v),
+          isDesktop: isDesktop,
+        ),
+        const SizedBox(height: 20),
+        Container(
+          width: double.infinity,
+          padding: const EdgeInsets.all(20),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(16),
+            border: Border.all(color: const Color(0xFFE6E9F2)),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Study plan: $selectedTechnology',
+                style: const TextStyle(
+                  fontWeight: FontWeight.w800,
+                  fontSize: 18,
+                ),
+              ),
+              const SizedBox(height: 8),
+              const Text(
+                'Suggested order',
+                style: TextStyle(fontWeight: FontWeight.w700),
+              ),
+              const SizedBox(height: 8),
+              const Text(
+                'Concepts → short examples → hands-on practice → interview questions → revision of mistakes.',
+                style: TextStyle(height: 1.5, color: Color(0xFF77798C)),
+              ),
+              const SizedBox(height: 14),
+              Wrap(
+                spacing: 10,
+                runSpacing: 10,
+                children: [
+                  FilledButton.icon(
+                    onPressed: () => openPractice(category: 'All'),
+                    icon: const Icon(Icons.quiz_outlined),
+                    label: const Text('Open question practice'),
+                  ),
+                  OutlinedButton.icon(
+                    onPressed: () => setState(() => selectedPage = 10),
+                    icon: const Icon(Icons.fact_check_outlined),
+                    label: const Text('Go to assessments'),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(height: 14),
+        const Text(
+          'The existing question bank currently contains Flutter, Dart, Programming, and HR questions. Other technology cards provide a study direction; they do not imply that a full dedicated question bank already exists for every technology.',
+          style: TextStyle(color: Color(0xFF77798C), fontSize: 12, height: 1.5),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildAssessmentCenterPage(bool isDesktop) {
+    final tests = [
+      {
+        'name': 'Technical Quiz',
+        'description':
+            'Practice from the current question bank and review your answers.',
+        'tag': 'Available now',
+      },
+      {
+        'name': 'Programming Fundamentals',
+        'description': 'Review general programming and data-structure concepts in the current bank.',
+        'tag': 'Available now',
+      },
+      {
+        'name': 'Flutter & Dart',
+        'description': 'Practice the existing Flutter and Dart questions.',
+        'tag': 'Available now',
+      },
+      {
+        'name': 'HR & Behavioral',
+        'description': 'Prepare introductions, teamwork, project explanations, and interview situations.',
+        'tag': 'Available now',
+      },
+      {
+        'name': 'Aptitude Assessment',
+        'description': 'A dedicated numerical, logical, and verbal question bank can be added as a separate module.',
+        'tag': 'Expansion area',
+      },
+      {
+        'name': 'Role-specific Mock Test',
+        'description': 'Build timed assessments from the selected role and required skills.',
+        'tag': 'Expansion area',
+      },
+    ];
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        _pageIntro(
+          'Assessment center',
+          'Choose a test type, practice under a clear goal, and review your results.',
+          Icons.fact_check_outlined,
+        ),
+        const SizedBox(height: 24),
+        _choiceCards(
+          choices: tests,
+          selected: 'Technical Quiz',
+          onSelect: (v) {
+            if (v == 'Technical Quiz' ||
+                v == 'Programming Fundamentals' ||
+                v == 'Flutter & Dart' ||
+                v == 'HR & Behavioral') {
+              setState(() {
+                selectedPage = 4;
+                quizCategory = v == 'Flutter & Dart'
+                    ? 'Flutter'
+                    : v == 'HR & Behavioral'
+                    ? 'HR'
+                    : v == 'Programming Fundamentals'
+                    ? 'Programming'
+                    : 'All';
+              });
+            } else {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(
+                    '$v is identified as a future module; it is not implemented as a dedicated test yet.',
+                  ),
+                ),
+              );
+            }
+          },
+          isDesktop: isDesktop,
+        ),
+        const SizedBox(height: 18),
+        const Text(
+          'Available-now cards open the current quiz engine. Aptitude-specific and fully role-generated tests are listed transparently as future expansion areas, not as completed features.',
+          style: TextStyle(color: Color(0xFF77798C), fontSize: 12, height: 1.5),
+        ),
+      ],
+    );
+  }
+
+  void _sendCareerChat() {
+    final message = _careerChatController.text.trim();
+    if (message.isEmpty) return;
+    final text = message.toLowerCase();
+    String reply;
+    if (text.contains('resume') ||
+        text.contains('cv') ||
+        text.contains('ats')) {
+      reply = 'Start in Resume Analyzer: upload your PDF, add the target job description, review matched and missing skills, then tailor your resume truthfully to the role.';
+    } else if (text.contains('company') ||
+        text.contains('google') ||
+        text.contains('amazon') ||
+        text.contains('tcs') ||
+        text.contains('infosys') ||
+        text.contains('microsoft')) {
+      reply = 'Open Company Prep, choose an example employer, then use its checklist alongside the current official job posting. This starter guide does not contain verified company-specific questions.';
+    } else if (text.contains('python') ||
+        text.contains('java') ||
+        text.contains('flutter') ||
+        text.contains('react') ||
+        text.contains('technology') ||
+        text.contains('language')) {
+      reply = 'Open Technologies and select the technology. Study concepts first, practice examples, then use the current question bank. Dedicated banks for every listed technology still need to be added.';
+    } else if (text.contains('role') ||
+        text.contains('career') ||
+        text.contains('job')) {
+      reply = 'Start with Job Roles to compare typical skills, then choose a Career Track and review its roadmap. Bring a real job description into Resume Analyzer to personalize the plan.';
+    } else if (text.contains('test') ||
+        text.contains('quiz') ||
+        text.contains('assessment') ||
+        text.contains('aptitude')) {
+      reply = 'Open Assessment Center for the currently available Flutter, Dart, Programming, and HR quizzes. Dedicated aptitude and role-generated tests are future modules.';
+    } else if (text.contains('beginner') ||
+        text.contains('start') ||
+        text.contains('learn')) {
+      reply = 'A good beginner path is: choose one target role, learn its core skills, build a small project, practice a few questions daily, and review mistakes. Use Career Tracks to get started.';
+    } else {
+      reply = 'Try asking about choosing a job role, preparing for a company, learning a technology, improving a resume, or starting a quiz. I am an offline starter guide right now, not a connected generative AI service.';
+    }
+    setState(() {
+      careerChatReply = reply;
+      _careerChatController.clear();
+    });
+  }
+
+  Widget _buildCareerChatbotPage(bool isDesktop) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        _pageIntro(
+          'Career guide',
+          'Ask where to begin. This first version uses local guidance rules and works without an API key.',
+          Icons.chat_bubble_outline_rounded,
+        ),
+        const SizedBox(height: 24),
+        Container(
+          width: double.infinity,
+          padding: const EdgeInsets.all(22),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(18),
+            border: Border.all(color: const Color(0xFFE6E9F2)),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  const CircleAvatar(
+                    backgroundColor: Color(0xFFF0EFFF),
+                    child: Icon(
+                      Icons.auto_awesome_rounded,
+                      color: Color(0xFF635BDB),
+                    ),
+                  ),
+                  const SizedBox(width: 12),
+                  const Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'CareerPrep Guide',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w800,
+                            fontSize: 16,
+                          ),
+                        ),
+                        Text(
+                          'Offline starter assistant',
+                          style: TextStyle(
+                            color: Color(0xFF77798C),
+                            fontSize: 12,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 18),
+              const Text(
+                'What would you like help with?',
+                style: TextStyle(fontWeight: FontWeight.w700),
+              ),
+              const SizedBox(height: 10),
+              Wrap(
+                spacing: 8,
+                runSpacing: 8,
+                children:
+                    [
+                          'Choose a job role',
+                          'Prepare for a company',
+                          'Learn Python',
+                          'Improve my resume',
+                          'Practice a test',
+                        ]
+                        .map(
+                          (prompt) => ActionChip(
+                            label: Text(prompt),
+                            onPressed: () {
+                              _careerChatController.text = prompt;
+                              _sendCareerChat();
+                            },
+                          ),
+                        )
+                        .toList(),
+              ),
+              const SizedBox(height: 18),
+              TextField(
+                controller: _careerChatController,
+                onSubmitted: (_) => _sendCareerChat(),
+                minLines: 1,
+                maxLines: 3,
+                decoration: InputDecoration(
+                  hintText: 'e.g. I am a beginner aiming for a software developer role',
+                  suffixIcon: IconButton(
+                    onPressed: _sendCareerChat,
+                    icon: const Icon(Icons.send_rounded),
+                  ),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(14),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 18),
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: const Color(0xFFF4F6FA),
+                  borderRadius: BorderRadius.circular(14),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      'SUGGESTED NEXT STEP',
+                      style: TextStyle(
+                        color: Color(0xFF635BDB),
+                        fontWeight: FontWeight.w800,
+                        fontSize: 10,
+                        letterSpacing: 1.1,
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    Text(careerChatReply, style: const TextStyle(height: 1.55)),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(height: 12),
+        const Text(
+          'An API-connected AI chatbot, chat history, and personalized plans based on a user profile are not implemented in this starter version.',
+          style: TextStyle(color: Color(0xFF77798C), fontSize: 12, height: 1.5),
+        ),
+      ],
+    );
   }
 
   Widget _buildDashboard(bool isDesktop) {
@@ -2346,13 +3393,18 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
         _buildStats(isDesktop),
         const SizedBox(height: 32),
         _sectionHeading(
-          'Your preparation toolkit',
-          'Choose an area and start practicing.',
-          action: 'View questions',
-          onAction: () => openPractice(),
+          'What do you want to prepare?',
+          'Choose a career goal, technology, assessment, or enter your own topic.',
         ),
         const SizedBox(height: 18),
-        _buildCategories(isDesktop),
+        _buildPreparationChooser(isDesktop),
+        const SizedBox(height: 28),
+        _sectionHeading(
+          'Prepare your way',
+          'Explore roles, companies, technologies, assessments, and guided help.',
+        ),
+        const SizedBox(height: 16),
+        _buildExploreGrid(isDesktop),
         const SizedBox(height: 24),
         _buildQuizPromotion(),
         const SizedBox(height: 32),
@@ -2389,11 +3441,11 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
       padding: EdgeInsets.all(isDesktop ? 34 : 23),
       decoration: BoxDecoration(
         gradient: const LinearGradient(
-          colors: [Color(0xFF6254E8), Color(0xFF8875F5)],
+          colors: [Color(0xFF1A2236), Color(0xFF303958)],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
-        borderRadius: BorderRadius.circular(24),
+        borderRadius: BorderRadius.circular(22),
       ),
       child: Stack(
         children: [
@@ -2428,7 +3480,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                     ),
                     SizedBox(width: 7),
                     Text(
-                      'WELCOME TO CAREERPREP AI',
+                      'YOUR CAREER, BUILT A STEP AT A TIME',
                       style: TextStyle(
                         fontSize: 10,
                         letterSpacing: 1.1,
@@ -2441,7 +3493,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
               ),
               const SizedBox(height: 23),
               Text(
-                'Your next opportunity\nstarts with practice.',
+                'Build skills.\nMove your career forward.',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: isDesktop ? 32 : 25,
@@ -2451,7 +3503,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
               ),
               const SizedBox(height: 12),
               const Text(
-                'Prepare for interviews, strengthen your skills,\nand take the next step in your career.',
+                'Prepare for the role you want, practice what matters,\nand turn your next step into a plan.',
                 style: TextStyle(
                   color: Color(0xFFEAE6FF),
                   height: 1.6,
@@ -2536,8 +3588,8 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
               padding: const EdgeInsets.all(17),
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(18),
-                border: Border.all(color: const Color(0xFFEAECF3)),
+                borderRadius: BorderRadius.circular(16),
+                border: Border.all(color: const Color(0xFFE4E8F0)),
               ),
               child: Row(
                 children: [
@@ -2569,6 +3621,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                           style: const TextStyle(
                             fontWeight: FontWeight.w800,
                             fontSize: 23,
+                            letterSpacing: -0.5,
                           ),
                         ),
                         Text(
@@ -2632,80 +3685,297 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
     );
   }
 
-  Widget _buildCategories(bool isDesktop) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final columns = constraints.maxWidth >= 850
-            ? 4
-            : constraints.maxWidth >= 500
-            ? 2
-            : 1;
-
-        return GridView.builder(
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          itemCount: categories.length,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: columns,
-            crossAxisSpacing: 14,
-            mainAxisSpacing: 14,
-            mainAxisExtent: 155,
-          ),
-          itemBuilder: (context, index) {
-            final category = categories[index];
-            final color = category['color'] as Color;
-            final name = category['name'] as String;
-
-            final count = questionBank
-                .where((question) => question.category == name)
-                .length;
-
-            return InkWell(
-              borderRadius: BorderRadius.circular(18),
-              onTap: () => openPractice(category: name),
-              child: Container(
-                padding: const EdgeInsets.all(19),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(18),
-                  border: Border.all(color: const Color(0xFFEAECF3)),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      width: 43,
-                      height: 43,
-                      decoration: BoxDecoration(
-                        color: color.withValues(alpha: 0.11),
-                        borderRadius: BorderRadius.circular(13),
-                      ),
-                      child: Icon(category['icon'] as IconData, color: color),
-                    ),
-                    const Spacer(),
-                    Text(
-                      name,
-                      style: const TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.w800,
-                      ),
-                    ),
-                    const SizedBox(height: 5),
-                    Text(
-                      '$count questions available',
-                      style: const TextStyle(
-                        fontSize: 11,
-                        color: Color(0xFF77798C),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            );
-          },
-        );
+  Widget _buildPreparationChooser(bool isDesktop) {
+    final options = <Map<String, dynamic>>[
+      {
+        'title': 'Languages & programming',
+        'subtitle': 'Python, Java, C++, SQL, DSA and more',
+        'focus': 'Technology & programming',
+        'icon': Icons.code_rounded,
+        'color': const Color(0xFF635BDB),
       },
+      {
+        'title': 'Frameworks & tools',
+        'subtitle': 'Flutter, React, Spring, Git, cloud and more',
+        'focus': 'Frameworks & tools',
+        'icon': Icons.widgets_outlined,
+        'color': const Color(0xFF0D9B78),
+      },
+      {
+        'title': 'Job roles & skills',
+        'subtitle': 'Developer, analyst, designer, tester and more',
+        'focus': 'Job role',
+        'icon': Icons.badge_outlined,
+        'color': const Color(0xFF3478F6),
+      },
+      {
+        'title': 'Company interviews',
+        'subtitle': 'Prepare around a target employer or job description',
+        'focus': 'Company interview',
+        'icon': Icons.business_outlined,
+        'color': const Color(0xFFEF8B35),
+      },
+      {
+        'title': 'Aptitude & assessments',
+        'subtitle': 'Reasoning, quantitative aptitude and test practice',
+        'focus': 'Aptitude & assessments',
+        'icon': Icons.fact_check_outlined,
+        'color': const Color(0xFF9B59B6),
+      },
+      {
+        'title': 'HR & communication',
+        'subtitle': 'Behavioral interviews, speaking and confidence',
+        'focus': 'HR & communication',
+        'icon': Icons.forum_outlined,
+        'color': const Color(0xFFDA5277),
+      },
+    ];
+
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.all(isDesktop ? 24 : 16),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(22),
+        border: Border.all(color: const Color(0xFFE6E9F2)),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            'Pick your preparation focus',
+            style: TextStyle(fontSize: 17, fontWeight: FontWeight.w800),
+          ),
+          const SizedBox(height: 6),
+          const Text(
+            'CareerPrep is for every candidate. Start with a suggested area or enter any topic you have in mind.',
+            style: TextStyle(
+              color: Color(0xFF77798C),
+              height: 1.5,
+              fontSize: 13,
+            ),
+          ),
+          const SizedBox(height: 18),
+          LayoutBuilder(
+            builder: (context, constraints) {
+              final columns = constraints.maxWidth >= 900
+                  ? 3
+                  : constraints.maxWidth >= 540
+                  ? 2
+                  : 1;
+              return GridView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: options.length,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: columns,
+                  crossAxisSpacing: 12,
+                  mainAxisSpacing: 12,
+                  mainAxisExtent: 112,
+                ),
+                itemBuilder: (context, index) {
+                  final option = options[index];
+                  final focus = option['focus'] as String;
+                  final color = option['color'] as Color;
+                  final selected = selectedPreparationFocus == focus;
+                  return InkWell(
+                    borderRadius: BorderRadius.circular(16),
+                    onTap: () => setState(() {
+                      selectedPreparationFocus = focus;
+                      if (_preparationTopicController.text.trim().isEmpty) {
+                        switch (focus) {
+                          case 'Technology & programming':
+                            _preparationTopicController.text = '';
+                            break;
+                          case 'Frameworks & tools':
+                            _preparationTopicController.text = '';
+                            break;
+                          case 'Job role':
+                            _preparationTopicController.text = '';
+                            break;
+                          case 'Company interview':
+                            _preparationTopicController.text = '';
+                            break;
+                          default:
+                            _preparationTopicController.text = '';
+                        }
+                      }
+                    }),
+                    child: AnimatedContainer(
+                      duration: const Duration(milliseconds: 160),
+                      padding: const EdgeInsets.all(14),
+                      decoration: BoxDecoration(
+                        color: selected
+                            ? color.withValues(alpha: 0.07)
+                            : Colors.white,
+                        borderRadius: BorderRadius.circular(16),
+                        border: Border.all(
+                          color: selected ? color : const Color(0xFFE6E9F2),
+                          width: selected ? 1.6 : 1,
+                        ),
+                      ),
+                      child: Row(
+                        children: [
+                          Container(
+                            width: 42,
+                            height: 42,
+                            decoration: BoxDecoration(
+                              color: color.withValues(alpha: 0.12),
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: Icon(
+                              option['icon'] as IconData,
+                              color: color,
+                              size: 22,
+                            ),
+                          ),
+                          const SizedBox(width: 12),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  option['title'] as String,
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: const TextStyle(
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w800,
+                                  ),
+                                ),
+                                const SizedBox(height: 5),
+                                Text(
+                                  option['subtitle'] as String,
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: const TextStyle(
+                                    fontSize: 11,
+                                    height: 1.35,
+                                    color: Color(0xFF77798C),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          if (selected)
+                            Icon(
+                              Icons.check_circle_rounded,
+                              color: color,
+                              size: 19,
+                            ),
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              );
+            },
+          ),
+          const SizedBox(height: 18),
+          TextField(
+            controller: _preparationTopicController,
+            textInputAction: TextInputAction.done,
+            onSubmitted: (_) => _startSelectedPreparation(),
+            decoration: InputDecoration(
+              labelText: 'Your topic (optional)',
+              hintText:
+                  'e.g. Python, Cybersecurity, Data Analyst, UPSC, Amazon...',
+              prefixIcon: const Icon(Icons.search_rounded),
+              helperText: 'Enter any language, technology, role, company, exam, or subject.',
+              helperMaxLines: 2,
+              suffixIcon: IconButton(
+                tooltip: 'Clear topic',
+                onPressed: () => _preparationTopicController.clear(),
+                icon: const Icon(Icons.close_rounded),
+              ),
+            ),
+          ),
+          const SizedBox(height: 16),
+          Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children:
+                [
+                  'Python',
+                  'Java',
+                  'Cybersecurity',
+                  'Data Analyst',
+                  'Product Manager',
+                  'Aptitude',
+                ].map((topic) {
+                  return ActionChip(
+                    label: Text(topic),
+                    onPressed: () {
+                      setState(() {
+                        _preparationTopicController.text = topic;
+                        if (topic == 'Aptitude') {
+                          selectedPreparationFocus = 'Aptitude & assessments';
+                        } else if (topic == 'Data Analyst' ||
+                            topic == 'Product Manager') {
+                          selectedPreparationFocus = 'Job role';
+                        } else {
+                          selectedPreparationFocus = 'Technology & programming';
+                        }
+                      });
+                    },
+                  );
+                }).toList(),
+          ),
+          const SizedBox(height: 20),
+          SizedBox(
+            width: double.infinity,
+            child: FilledButton.icon(
+              onPressed: _startSelectedPreparation,
+              icon: const Icon(Icons.arrow_forward_rounded),
+              label: const Text('Continue with my preparation'),
+              style: FilledButton.styleFrom(
+                padding: const EdgeInsets.symmetric(vertical: 16),
+              ),
+            ),
+          ),
+          const SizedBox(height: 10),
+          const Text(
+            'Your selection opens the closest matching preparation workspace. Custom topics are saved into that workspace; topic-specific question generation will be added as a separate feature.',
+            style: TextStyle(
+              fontSize: 11,
+              height: 1.45,
+              color: Color(0xFF77798C),
+            ),
+          ),
+        ],
+      ),
     );
+  }
+
+  void _startSelectedPreparation() {
+    final topic = _preparationTopicController.text.trim();
+    switch (selectedPreparationFocus) {
+      case 'Technology & programming':
+      case 'Frameworks & tools':
+        if (topic.isNotEmpty) selectedTechnology = topic;
+        setState(() => selectedPage = 9);
+        break;
+      case 'Job role':
+        if (topic.isNotEmpty) selectedJobRole = topic;
+        setState(() => selectedPage = 7);
+        break;
+      case 'Company interview':
+        if (topic.isNotEmpty) selectedCompany = topic;
+        setState(() => selectedPage = 8);
+        break;
+      case 'Aptitude & assessments':
+        setState(() => selectedPage = 10);
+        break;
+      case 'HR & communication':
+        openPractice(category: 'HR');
+        break;
+      default:
+        _careerChatController.text = topic.isEmpty
+            ? 'Help me choose what to prepare based on my career goal.'
+            : 'Help me prepare for: $topic';
+        setState(() => selectedPage = 11);
+    }
   }
 
   Widget _buildResumeChecklist() {
