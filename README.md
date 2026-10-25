@@ -46,21 +46,6 @@ The application combines an extensive interview question bank, customizable prac
 
 ---
 
-## 🛠️ Technology Stack
-
-| Category                | Technologies        |
-| ----------------------- | ------------------- |
-| Framework               | Flutter             |
-| Programming Language    | Dart                |
-| User Interface          | Material Design 3   |
-| Local Data Storage      | SharedPreferences   |
-| Resume Processing       | PDF text extraction |
-| Version Control         | Git and GitHub      |
-| Development Environment | Visual Studio Code  |
-| Web Deployment          | GitHub Pages        |
-
----
-
 ## 🚀 Getting Started
 
 ### Prerequisites
