@@ -4,7 +4,6 @@
 
 The application combines an extensive interview question bank, customizable practice sessions, performance tracking, revision tools, and resume-to-job-description analysis to help users prepare for their career goals.
 
-🌐 **Live Demo:** [CareerPrep AI](https://shivamtripathi78.github.io/CareerPrep-AI/)
 
 ---
 
@@ -44,13 +43,6 @@ The application combines an extensive interview question bank, customizable prac
 * Use bookmarks and revision tools to reinforce important concepts.
 * Combine interview practice with resume preparation in one application.
 
----
-
-## 🌐 Live Application
-
-Try CareerPrep AI online:
-
-**[Launch CareerPrep AI](https://shivamtripathi78.github.io/CareerPrep-AI/)**
 
 ---
 
