@@ -19,10 +19,10 @@ class CareerPrepApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
-        scaffoldBackgroundColor: const Color(0xFFF4F6FA),
+        scaffoldBackgroundColor: const Color(0xFFF7F7F3),
         colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF635BDB),
-          primary: const Color(0xFF635BDB),
+          seedColor: const Color(0xFF536D4F),
+          primary: const Color(0xFF536D4F),
           surface: Colors.white,
         ),
         fontFamily: 'Arial',
@@ -36,15 +36,15 @@ class CareerPrepApp extends StatelessWidget {
           ),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(14),
-            borderSide: const BorderSide(color: Color(0xFFEAECF3)),
+            borderSide: const BorderSide(color: Color(0xFFE4E5DB)),
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(14),
-            borderSide: const BorderSide(color: Color(0xFFEAECF3)),
+            borderSide: const BorderSide(color: Color(0xFFE4E5DB)),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(14),
-            borderSide: const BorderSide(color: Color(0xFF6254E8), width: 1.6),
+            borderSide: const BorderSide(color: Color(0xFF536D4F), width: 1.6),
           ),
         ),
         snackBarTheme: const SnackBarThemeData(
@@ -56,7 +56,7 @@ class CareerPrepApp extends StatelessWidget {
           margin: EdgeInsets.zero,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(18),
-            side: const BorderSide(color: Color(0xFFEAECF3)),
+            side: const BorderSide(color: Color(0xFFE4E5DB)),
           ),
         ),
       ),
@@ -1560,7 +1560,7 @@ const List<Map<String, dynamic>> categories = [
     'name': 'Flutter',
     'description': 'Widgets, layouts and mobile development',
     'icon': Icons.phone_android_rounded,
-    'color': Color(0xFF3478F6),
+    'color': Color(0xFF6D8266),
   },
   {
     'name': 'Dart',
@@ -1572,13 +1572,13 @@ const List<Map<String, dynamic>> categories = [
     'name': 'Programming',
     'description': 'Logic, algorithms and data structures',
     'icon': Icons.terminal_rounded,
-    'color': Color(0xFF0D9B78),
+    'color': Color(0xFF536D4F),
   },
   {
     'name': 'HR',
     'description': 'Communication and behavioral interviews',
     'icon': Icons.people_alt_rounded,
-    'color': Color(0xFFEF8B35),
+    'color': Color(0xFF9A7A46),
   },
 ];
 
@@ -1855,7 +1855,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                         child: _quizResultStat(
                           'Average',
                           average,
-                          const Color(0xFF6254E8),
+                          const Color(0xFF536D4F),
                           110,
                         ),
                       ),
@@ -1864,7 +1864,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                         child: _quizResultStat(
                           'Best score',
                           best,
-                          const Color(0xFF0D9B78),
+                          const Color(0xFF536D4F),
                           110,
                         ),
                       ),
@@ -2125,8 +2125,8 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
     return Container(
       width: 258,
       decoration: const BoxDecoration(
-        color: Color(0xFF151B2B),
-        border: Border(right: BorderSide(color: Color(0xFF252D40))),
+        color: Color(0xFFFDFDF9),
+        border: Border(right: BorderSide(color: Color(0xFFE4E5DB))),
       ),
       child: SafeArea(
         child: SingleChildScrollView(
@@ -2143,7 +2143,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                         width: 42,
                         height: 42,
                         decoration: BoxDecoration(
-                          color: const Color(0xFF756CF0),
+                          color: const Color(0xFF536D4F),
                           borderRadius: BorderRadius.circular(13),
                         ),
                         child: const Icon(
@@ -2168,7 +2168,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                               style: TextStyle(
                                 fontSize: 9,
                                 letterSpacing: 1.0,
-                                color: Color(0xFFA8B0C4),
+                                color: Color(0xFF73786C),
                               ),
                             ),
                           ],
@@ -2182,7 +2182,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                   child: Text(
                     'YOUR WORKSPACE',
                     style: TextStyle(
-                      color: Color(0xFF7F8AA3),
+                      color: Color(0xFF858A7E),
                       fontWeight: FontWeight.w700,
                       fontSize: 11,
                       letterSpacing: 1.2,
@@ -2200,7 +2200,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                   child: Text(
                     'EXPLORE & PREPARE',
                     style: TextStyle(
-                      color: Color(0xFF7F8AA3),
+                      color: Color(0xFF858A7E),
                       fontWeight: FontWeight.w700,
                       fontSize: 11,
                       letterSpacing: 1.2,
@@ -2222,8 +2222,8 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                   margin: const EdgeInsets.all(16),
                   padding: const EdgeInsets.all(15),
                   decoration: BoxDecoration(
-                    color: const Color(0xFF20283A),
-                    border: Border.all(color: const Color(0xFF30394F)),
+                    color: const Color(0xFFF3F4EE),
+                    border: Border.all(color: const Color(0xFFE0E4D9)),
                     borderRadius: BorderRadius.circular(16),
                   ),
                   child: const Column(
@@ -2231,7 +2231,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                     children: [
                       Icon(
                         Icons.lightbulb_outline_rounded,
-                        color: Color(0xFFB9B4FF),
+                        color: Color(0xFFDDE7D5),
                         size: 28,
                       ),
                       SizedBox(height: 10),
@@ -2249,7 +2249,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                         style: TextStyle(
                           fontSize: 12,
                           height: 1.5,
-                          color: Color(0xFFADB6C9),
+                          color: Color(0xFF73786C),
                         ),
                       ),
                     ],
@@ -2269,7 +2269,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 3),
       child: Material(
-        color: selected ? const Color(0xFF2A3048) : Colors.transparent,
+        color: selected ? const Color(0xFFE8EEE3) : Colors.transparent,
         borderRadius: BorderRadius.circular(12),
         child: InkWell(
           borderRadius: BorderRadius.circular(12),
@@ -2288,8 +2288,8 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                   icon,
                   size: 21,
                   color: selected
-                      ? const Color(0xFFB9B4FF)
-                      : const Color(0xFFA8B0C4),
+                      ? const Color(0xFF536D4F)
+                      : const Color(0xFF73786C),
                 ),
                 const SizedBox(width: 12),
                 Expanded(
@@ -2298,7 +2298,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                     style: TextStyle(
                       fontWeight: selected ? FontWeight.w700 : FontWeight.w500,
                       fontSize: 13,
-                      color: selected ? Colors.white : const Color(0xFFD0D5E2),
+                      color: selected ? const Color(0xFF536D4F) : const Color(0xFF454A40),
                     ),
                   ),
                 ),
@@ -2316,7 +2316,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
       padding: EdgeInsets.symmetric(horizontal: isDesktop ? 32 : 18),
       decoration: const BoxDecoration(
         color: Colors.white,
-        border: Border(bottom: BorderSide(color: Color(0xFFEAECF3))),
+        border: Border(bottom: BorderSide(color: Color(0xFFE4E5DB))),
       ),
       child: Row(
         children: [
@@ -2325,7 +2325,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
               width: 39,
               height: 39,
               decoration: BoxDecoration(
-                color: const Color(0xFF6254E8),
+                color: const Color(0xFF536D4F),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: const Icon(
@@ -2360,12 +2360,12 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
           const Icon(
             Icons.auto_awesome_rounded,
             size: 20,
-            color: Color(0xFF6254E8),
+            color: Color(0xFF536D4F),
           ),
           const SizedBox(width: 8),
           const Text(
             'Your career, your pace',
-            style: TextStyle(color: Color(0xFF77798C), fontSize: 12),
+            style: TextStyle(color: Color(0xFF73786C), fontSize: 12),
           ),
         ],
       ),
@@ -2460,7 +2460,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(16),
-              border: Border.all(color: const Color(0xFFE6E9F2)),
+              border: Border.all(color: const Color(0xFFE4E5DB)),
             ),
             child: Row(
               children: [
@@ -2468,12 +2468,12 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                   width: 46,
                   height: 46,
                   decoration: BoxDecoration(
-                    color: const Color(0xFFF0EFFF),
+                    color: const Color(0xFFE8EEE3),
                     borderRadius: BorderRadius.circular(13),
                   ),
                   child: Icon(
                     item['icon'] as IconData,
-                    color: const Color(0xFF635BDB),
+                    color: const Color(0xFF536D4F),
                   ),
                 ),
                 const SizedBox(width: 13),
@@ -2493,7 +2493,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                       Text(
                         item['subtitle'] as String,
                         style: const TextStyle(
-                          color: Color(0xFF77798C),
+                          color: Color(0xFF73786C),
                           fontSize: 12,
                         ),
                       ),
@@ -2503,7 +2503,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                 const Icon(
                   Icons.arrow_forward_rounded,
                   size: 18,
-                  color: Color(0xFF77798C),
+                  color: Color(0xFF73786C),
                 ),
               ],
             ),
@@ -2519,7 +2519,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
         gradient: const LinearGradient(
-          colors: [Color(0xFF1A2236), Color(0xFF303958)],
+          colors: [Color(0xFF536D4F), Color(0xFF40563D)],
         ),
         borderRadius: BorderRadius.circular(20),
       ),
@@ -2529,7 +2529,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
             width: 52,
             height: 52,
             decoration: BoxDecoration(
-              color: const Color(0xFF756CF0),
+              color: const Color(0xFF536D4F),
               borderRadius: BorderRadius.circular(15),
             ),
             child: Icon(icon, color: Colors.white, size: 27),
@@ -2589,12 +2589,12 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
           child: Container(
             padding: const EdgeInsets.all(18),
             decoration: BoxDecoration(
-              color: active ? const Color(0xFFF0EFFF) : Colors.white,
+              color: active ? const Color(0xFFE8EEE3) : Colors.white,
               borderRadius: BorderRadius.circular(16),
               border: Border.all(
                 color: active
-                    ? const Color(0xFF635BDB)
-                    : const Color(0xFFE6E9F2),
+                    ? const Color(0xFF536D4F)
+                    : const Color(0xFFE4E5DB),
                 width: active ? 1.5 : 1,
               ),
             ),
@@ -2615,7 +2615,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                     if (active)
                       const Icon(
                         Icons.check_circle_rounded,
-                        color: Color(0xFF635BDB),
+                        color: Color(0xFF536D4F),
                         size: 19,
                       ),
                   ],
@@ -2625,7 +2625,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                   child: Text(
                     choice['description'] ?? '',
                     style: const TextStyle(
-                      color: Color(0xFF77798C),
+                      color: Color(0xFF73786C),
                       fontSize: 12,
                       height: 1.45,
                     ),
@@ -2634,7 +2634,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                 Text(
                   choice['tag'] ?? 'Explore',
                   style: const TextStyle(
-                    color: Color(0xFF635BDB),
+                    color: Color(0xFF536D4F),
                     fontSize: 11,
                     fontWeight: FontWeight.w700,
                   ),
@@ -2736,7 +2736,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
         const SizedBox(height: 10),
         const Text(
           'This is a starter roadmap, not a guarantee of hiring requirements. Tailor it to the job description you are targeting.',
-          style: TextStyle(color: Color(0xFF77798C), fontSize: 12),
+          style: TextStyle(color: Color(0xFF73786C), fontSize: 12),
         ),
       ],
     );
@@ -2748,7 +2748,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
     decoration: BoxDecoration(
       color: Colors.white,
       borderRadius: BorderRadius.circular(16),
-      border: Border.all(color: const Color(0xFFE6E9F2)),
+      border: Border.all(color: const Color(0xFFE4E5DB)),
     ),
     child: Column(
       children: [
@@ -2760,11 +2760,11 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
               children: [
                 CircleAvatar(
                   radius: 14,
-                  backgroundColor: const Color(0xFFF0EFFF),
+                  backgroundColor: const Color(0xFFE8EEE3),
                   child: Text(
                     '${i + 1}',
                     style: const TextStyle(
-                      color: Color(0xFF635BDB),
+                      color: Color(0xFF536D4F),
                       fontWeight: FontWeight.w800,
                       fontSize: 12,
                     ),
@@ -2855,7 +2855,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(16),
-            border: Border.all(color: const Color(0xFFE6E9F2)),
+            border: Border.all(color: const Color(0xFFE4E5DB)),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -2875,7 +2875,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
               const SizedBox(height: 8),
               const Text(
                 '1. Compare the role with a real job description.\n2. Identify skills you already have and skills to learn.\n3. Practice relevant questions and prepare project examples.',
-                style: TextStyle(height: 1.6, color: Color(0xFF77798C)),
+                style: TextStyle(height: 1.6, color: Color(0xFF73786C)),
               ),
               const SizedBox(height: 14),
               Wrap(
@@ -2965,7 +2965,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
         const SizedBox(height: 14),
         const Text(
           'This section does not claim to contain verified or leaked company interview questions. Use current official recruitment information to confirm requirements.',
-          style: TextStyle(color: Color(0xFF77798C), fontSize: 12, height: 1.5),
+          style: TextStyle(color: Color(0xFF73786C), fontSize: 12, height: 1.5),
         ),
         const SizedBox(height: 12),
         FilledButton.icon(
@@ -3070,7 +3070,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(16),
-            border: Border.all(color: const Color(0xFFE6E9F2)),
+            border: Border.all(color: const Color(0xFFE4E5DB)),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -3090,7 +3090,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
               const SizedBox(height: 8),
               const Text(
                 'Concepts → short examples → hands-on practice → interview questions → revision of mistakes.',
-                style: TextStyle(height: 1.5, color: Color(0xFF77798C)),
+                style: TextStyle(height: 1.5, color: Color(0xFF73786C)),
               ),
               const SizedBox(height: 14),
               Wrap(
@@ -3115,7 +3115,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
         const SizedBox(height: 14),
         const Text(
           'The existing question bank currently contains Flutter, Dart, Programming, and HR questions. Other technology cards provide a study direction; they do not imply that a full dedicated question bank already exists for every technology.',
-          style: TextStyle(color: Color(0xFF77798C), fontSize: 12, height: 1.5),
+          style: TextStyle(color: Color(0xFF73786C), fontSize: 12, height: 1.5),
         ),
       ],
     );
@@ -3197,7 +3197,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
         const SizedBox(height: 18),
         const Text(
           'Available-now cards open the current quiz engine. Aptitude-specific and fully role-generated tests are listed transparently as future expansion areas, not as completed features.',
-          style: TextStyle(color: Color(0xFF77798C), fontSize: 12, height: 1.5),
+          style: TextStyle(color: Color(0xFF73786C), fontSize: 12, height: 1.5),
         ),
       ],
     );
@@ -3264,7 +3264,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(18),
-            border: Border.all(color: const Color(0xFFE6E9F2)),
+            border: Border.all(color: const Color(0xFFE4E5DB)),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -3272,10 +3272,10 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
               Row(
                 children: [
                   const CircleAvatar(
-                    backgroundColor: Color(0xFFF0EFFF),
+                    backgroundColor: Color(0xFFE8EEE3),
                     child: Icon(
                       Icons.auto_awesome_rounded,
-                      color: Color(0xFF635BDB),
+                      color: Color(0xFF536D4F),
                     ),
                   ),
                   const SizedBox(width: 12),
@@ -3293,7 +3293,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                         Text(
                           'Offline starter assistant',
                           style: TextStyle(
-                            color: Color(0xFF77798C),
+                            color: Color(0xFF73786C),
                             fontSize: 12,
                           ),
                         ),
@@ -3352,7 +3352,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                 width: double.infinity,
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: const Color(0xFFF4F6FA),
+                  color: const Color(0xFFF7F7F3),
                   borderRadius: BorderRadius.circular(14),
                 ),
                 child: Column(
@@ -3361,7 +3361,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                     const Text(
                       'SUGGESTED NEXT STEP',
                       style: TextStyle(
-                        color: Color(0xFF635BDB),
+                        color: Color(0xFF536D4F),
                         fontWeight: FontWeight.w800,
                         fontSize: 10,
                         letterSpacing: 1.1,
@@ -3378,60 +3378,364 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
         const SizedBox(height: 12),
         const Text(
           'An API-connected AI chatbot, chat history, and personalized plans based on a user profile are not implemented in this starter version.',
-          style: TextStyle(color: Color(0xFF77798C), fontSize: 12, height: 1.5),
+          style: TextStyle(color: Color(0xFF73786C), fontSize: 12, height: 1.5),
         ),
       ],
     );
   }
 
   Widget _buildDashboard(bool isDesktop) {
+    final subjectSummaries = <Map<String, dynamic>>[
+      {
+        'title': 'Flutter',
+        'subtitle': 'Widgets, layouts, state, navigation, lifecycle and app architecture.',
+        'icon': Icons.phone_android_rounded,
+        'page': 9,
+      },
+      {
+        'title': 'Dart',
+        'subtitle': 'Types, null safety, collections, OOP, Futures and asynchronous code.',
+        'icon': Icons.code_rounded,
+        'page': 9,
+      },
+      {
+        'title': 'Programming & DSA',
+        'subtitle': 'Complexity, data structures, algorithms, recursion and problem-solving.',
+        'icon': Icons.account_tree_outlined,
+        'page': 1,
+      },
+      {
+        'title': 'HR & Behavioural',
+        'subtitle': 'Self-introduction, STAR answers, teamwork, strengths and interview etiquette.',
+        'icon': Icons.forum_outlined,
+        'page': 1,
+      },
+      {
+        'title': 'Resume & Job Matching',
+        'subtitle': 'Extract resume text, compare it with a job description and identify skill gaps.',
+        'icon': Icons.description_outlined,
+        'page': 5,
+      },
+      {
+        'title': 'Assessments & Revision',
+        'subtitle': 'Take quizzes, review answers, bookmark questions and track attempts.',
+        'icon': Icons.fact_check_outlined,
+        'page': 10,
+      },
+    ];
+
+    final roleSummaries = <Map<String, dynamic>>[
+      {'title': 'Software Developer', 'subtitle': 'Programming, DSA, OOP, projects and debugging.'},
+      {'title': 'Frontend Developer', 'subtitle': 'HTML, CSS, JavaScript, React, UI and accessibility.'},
+      {'title': 'Backend Developer', 'subtitle': 'APIs, databases, authentication and server-side basics.'},
+      {'title': 'Data Analyst', 'subtitle': 'SQL, data cleaning, statistics and visualisation.'},
+      {'title': 'AI / ML Engineer', 'subtitle': 'Python, datasets, model evaluation and ML fundamentals.'},
+      {'title': 'QA / Test Engineer', 'subtitle': 'Test cases, bug reports, regression and automation basics.'},
+      {'title': 'Mobile Developer', 'subtitle': 'App UI, state management, APIs, storage and testing.'},
+      {'title': 'Cloud / DevOps & Security', 'subtitle': 'Linux, networking, CI/CD, cloud and defensive security basics.'},
+    ];
+
+    final companySummaries = <Map<String, dynamic>>[
+      {'title': 'Google', 'subtitle': 'Use the target role description to guide coding and problem-solving prep.'},
+      {'title': 'Microsoft', 'subtitle': 'Review fundamentals, projects, collaboration and role-specific skills.'},
+      {'title': 'Amazon', 'subtitle': 'Practise technical fundamentals and structured behavioural examples.'},
+      {'title': 'TCS', 'subtitle': 'Check current eligibility and prepare relevant aptitude or technical topics.'},
+      {'title': 'Infosys', 'subtitle': 'Use the official job details to guide assessment and interview practice.'},
+      {'title': 'Accenture', 'subtitle': 'Review the role requirements and prepare communication and technical basics.'},
+    ];
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         _buildHero(isDesktop),
-        const SizedBox(height: 24),
+        const SizedBox(height: 22),
         _buildStats(isDesktop),
-        const SizedBox(height: 32),
+        const SizedBox(height: 34),
         _sectionHeading(
-          'What do you want to prepare?',
-          'Choose a career goal, technology, assessment, or enter your own topic.',
+          'Welcome to your career workspace',
+          'CareerPrep AI brings interview learning, career exploration and application preparation together.',
         ),
-        const SizedBox(height: 18),
-        _buildPreparationChooser(isDesktop),
-        const SizedBox(height: 28),
+        const SizedBox(height: 16),
+        LayoutBuilder(
+          builder: (context, constraints) {
+            final columns = constraints.maxWidth >= 850 ? 4 : constraints.maxWidth >= 520 ? 2 : 1;
+            final items = <Map<String, dynamic>>[
+              {
+                'title': 'Learn by subject',
+                'description': 'Explore technology topics and practice the questions currently available in the question bank.',
+                'icon': Icons.menu_book_rounded,
+                'action': 'Explore technologies',
+                'tap': () => setState(() => selectedPage = 9),
+              },
+              {
+                'title': 'Practice interviews',
+                'description': 'Answer questions, check explanations, save important questions and revise weak areas.',
+                'icon': Icons.record_voice_over_rounded,
+                'action': 'Start practice',
+                'tap': () => openPractice(),
+              },
+              {
+                'title': 'Prepare for roles',
+                'description': 'Compare career tracks and understand the skills commonly associated with different roles.',
+                'icon': Icons.route_rounded,
+                'action': 'Explore career tracks',
+                'tap': () => setState(() => selectedPage = 6),
+              },
+              {
+                'title': 'Check your resume',
+                'description': 'Extract text from a PDF resume and compare it with a job description to spot possible gaps.',
+                'icon': Icons.description_outlined,
+                'action': 'Open resume analyzer',
+                'tap': () => setState(() => selectedPage = 5),
+              },
+            ];
+            return GridView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: items.length,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: columns,
+                crossAxisSpacing: 14,
+                mainAxisSpacing: 14,
+                mainAxisExtent: 208,
+              ),
+              itemBuilder: (context, index) {
+                final item = items[index];
+                return _dashboardInfoCard(
+                  title: item['title'] as String,
+                  description: item['description'] as String,
+                  icon: item['icon'] as IconData,
+                  actionLabel: item['action'] as String,
+                  onTap: item['tap'] as VoidCallback,
+                );
+              },
+            );
+          },
+        ),
+        const SizedBox(height: 34),
         _sectionHeading(
-          'Prepare your way',
-          'Explore roles, companies, technologies, assessments, and guided help.',
+          'Subjects & preparation areas',
+          'A quick map of what you can study on the platform. Dedicated question-bank coverage currently focuses on Flutter, Dart, Programming and HR.',
+          action: 'View technologies',
+          onAction: () => setState(() => selectedPage = 9),
+        ),
+        const SizedBox(height: 16),
+        _buildDashboardSummaryGrid(
+          subjectSummaries,
+          onTap: (item) {
+            final page = item['page'] as int;
+            if (page == 1) {
+              openPractice(category: item['title'] == 'HR & Behavioural' ? 'HR' : 'Programming');
+            } else {
+              setState(() => selectedPage = page);
+            }
+          },
+        ),
+        const SizedBox(height: 34),
+        _sectionHeading(
+          'Career roles to explore',
+          'Understand the typical skills to prepare for each path. Requirements differ between employers and job descriptions.',
+          action: 'Browse job roles',
+          onAction: () => setState(() => selectedPage = 7),
+        ),
+        const SizedBox(height: 16),
+        _buildDashboardSummaryGrid(
+          roleSummaries,
+          onTap: (_) => setState(() => selectedPage = 7),
+        ),
+        const SizedBox(height: 34),
+        _sectionHeading(
+          'Company preparation',
+          'Use these employer examples as starting points—not as a guarantee of their current hiring process or interview questions.',
+          action: 'Open company prep',
+          onAction: () => setState(() => selectedPage = 8),
+        ),
+        const SizedBox(height: 16),
+        _buildDashboardSummaryGrid(
+          companySummaries,
+          onTap: (item) {
+            setState(() {
+              selectedCompany = item['title'] as String;
+              selectedPage = 8;
+            });
+          },
+        ),
+        const SizedBox(height: 34),
+        _sectionHeading(
+          'Choose your next step',
+          'Move from learning to practice, assessment and application preparation.',
+        ),
+        const SizedBox(height: 16),
+        _buildPreparationChooser(isDesktop),
+        const SizedBox(height: 34),
+        _sectionHeading(
+          'Explore more tools',
+          'Open a focused workspace for career roadmaps, role research, company preparation, technologies and assessments.',
         ),
         const SizedBox(height: 16),
         _buildExploreGrid(isDesktop),
         const SizedBox(height: 24),
         _buildQuizPromotion(),
-        const SizedBox(height: 32),
+        const SizedBox(height: 34),
         _sectionHeading(
           'Resume readiness',
-          'Get the essentials ready before applying.',
+          'Use this checklist to keep your application preparation organised.',
           action: '${completedTasks.length}/${resumeTasks.length} complete',
         ),
         const SizedBox(height: 16),
         _buildResumeChecklist(),
-        const SizedBox(height: 32),
+        const SizedBox(height: 34),
         _sectionHeading(
           'Recommended practice',
-          'A few questions to get you started.',
+          'Try a few questions, review the explanations and bookmark anything you want to revisit.',
           action: 'Practice all',
           onAction: () => openPractice(),
         ),
         const SizedBox(height: 16),
         ...questionBank.take(3).map(_buildQuestionPreview),
         const SizedBox(height: 24),
+        Container(
+          width: double.infinity,
+          padding: const EdgeInsets.all(20),
+          decoration: BoxDecoration(
+            color: const Color(0xFFE8EEE3),
+            borderRadius: BorderRadius.circular(18),
+            border: Border.all(color: const Color(0xFFD8E1D2)),
+          ),
+          child: const Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Icon(Icons.lightbulb_outline_rounded, color: Color(0xFF536D4F), size: 27),
+              SizedBox(width: 12),
+              Expanded(
+                child: Text(
+                  'A useful workflow: choose a target role, read a current job description, identify skill gaps, study the relevant subjects, practise questions, review your progress and prepare project examples. Company processes and role requirements can change, so verify details from official recruitment information.',
+                  style: TextStyle(height: 1.55, color: Color(0xFF454A40)),
+                ),
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(height: 24),
         const Center(
           child: Text(
-            'CareerPrep AI • Build skills. Build confidence.',
-            style: TextStyle(color: Color(0xFF8B8DA0), fontSize: 12),
+            'CareerPrep AI • Learn with purpose. Prepare with confidence.',
+            style: TextStyle(color: Color(0xFF858A7E), fontSize: 12),
           ),
         ),
       ],
+    );
+  }
+
+  Widget _dashboardInfoCard({
+    required String title,
+    required String description,
+    required IconData icon,
+    required String actionLabel,
+    required VoidCallback onTap,
+  }) {
+    return Container(
+      padding: const EdgeInsets.all(18),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(18),
+        border: Border.all(color: const Color(0xFFE4E5DB)),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            width: 42,
+            height: 42,
+            decoration: BoxDecoration(
+              color: const Color(0xFFE8EEE3),
+              borderRadius: BorderRadius.circular(13),
+            ),
+            child: Icon(icon, color: const Color(0xFF536D4F)),
+          ),
+          const SizedBox(height: 12),
+          Text(title, style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w800, color: Color(0xFF24271F))),
+          const SizedBox(height: 6),
+          Expanded(
+            child: Text(description, style: const TextStyle(fontSize: 12, height: 1.45, color: Color(0xFF73786C))),
+          ),
+          TextButton(
+            onPressed: onTap,
+            style: TextButton.styleFrom(foregroundColor: const Color(0xFF536D4F), padding: EdgeInsets.zero),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(actionLabel, style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 12)),
+                const SizedBox(width: 5),
+                const Icon(Icons.arrow_forward_rounded, size: 15),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildDashboardSummaryGrid(
+    List<Map<String, dynamic>> items, {
+    required ValueChanged<Map<String, dynamic>> onTap,
+  }) {
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final columns = constraints.maxWidth >= 950 ? 4 : constraints.maxWidth >= 600 ? 3 : 1;
+        return GridView.builder(
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
+          itemCount: items.length,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: columns,
+            crossAxisSpacing: 12,
+            mainAxisSpacing: 12,
+            mainAxisExtent: 150,
+          ),
+          itemBuilder: (context, index) {
+            final item = items[index];
+            final title = item['title'] as String;
+            final description = item['subtitle'] as String;
+            final icons = <String, IconData>{
+              'Flutter': Icons.phone_android_rounded,
+              'Dart': Icons.code_rounded,
+              'Programming & DSA': Icons.account_tree_outlined,
+              'HR & Behavioural': Icons.forum_outlined,
+              'Resume & Job Matching': Icons.description_outlined,
+              'Assessments & Revision': Icons.fact_check_outlined,
+            };
+            return InkWell(
+              onTap: () => onTap(item),
+              borderRadius: BorderRadius.circular(16),
+              child: Container(
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(16),
+                  border: Border.all(color: const Color(0xFFE4E5DB)),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Icon(icons[title] ?? Icons.arrow_outward_rounded, size: 20, color: const Color(0xFF536D4F)),
+                        const Spacer(),
+                        const Icon(Icons.arrow_outward_rounded, size: 16, color: Color(0xFF92978A)),
+                      ],
+                    ),
+                    const SizedBox(height: 12),
+                    Text(title, maxLines: 1, overflow: TextOverflow.ellipsis, style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 14, color: Color(0xFF24271F))),
+                    const SizedBox(height: 6),
+                    Expanded(child: Text(description, maxLines: 3, overflow: TextOverflow.ellipsis, style: const TextStyle(fontSize: 11, height: 1.4, color: Color(0xFF73786C)))),
+                  ],
+                ),
+              ),
+            );
+          },
+        );
+      },
     );
   }
 
@@ -3441,7 +3745,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
       padding: EdgeInsets.all(isDesktop ? 34 : 23),
       decoration: BoxDecoration(
         gradient: const LinearGradient(
-          colors: [Color(0xFF1A2236), Color(0xFF303958)],
+          colors: [Color(0xFF536D4F), Color(0xFF40563D)],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
@@ -3505,7 +3809,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
               const Text(
                 'Prepare for the role you want, practice what matters,\nand turn your next step into a plan.',
                 style: TextStyle(
-                  color: Color(0xFFEAE6FF),
+                  color: Color(0xFFE8EEE3),
                   height: 1.6,
                   fontSize: 13,
                 ),
@@ -3517,7 +3821,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                 label: const Text('Start practicing'),
                 style: FilledButton.styleFrom(
                   backgroundColor: Colors.white,
-                  foregroundColor: const Color(0xFF6254E8),
+                  foregroundColor: const Color(0xFF536D4F),
                   padding: const EdgeInsets.symmetric(
                     horizontal: 20,
                     vertical: 16,
@@ -3538,28 +3842,28 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
         '${questionBank.length}',
         'Questions to explore',
         Icons.menu_book_rounded,
-        const Color(0xFF6254E8),
+        const Color(0xFF536D4F),
       ),
       (
         'Attempted',
         '${answeredIds.length}',
         'Questions practiced',
         Icons.check_circle_outline_rounded,
-        const Color(0xFF0D9B78),
+        const Color(0xFF536D4F),
       ),
       (
         'Bookmarked',
         '${bookmarkedIds.length}',
         'Saved for revision',
         Icons.bookmark_outline_rounded,
-        const Color(0xFFEF8B35),
+        const Color(0xFF9A7A46),
       ),
       (
         'Resume tasks',
         '${completedTasks.length}/${resumeTasks.length}',
         'Checklist completed',
         Icons.description_outlined,
-        const Color(0xFF3478F6),
+        const Color(0xFF6D8266),
       ),
     ];
 
@@ -3589,7 +3893,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(16),
-                border: Border.all(color: const Color(0xFFE4E8F0)),
+                border: Border.all(color: const Color(0xFFE4E5DB)),
               ),
               child: Row(
                 children: [
@@ -3611,7 +3915,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                         Text(
                           stat.$1,
                           style: const TextStyle(
-                            color: Color(0xFF77798C),
+                            color: Color(0xFF73786C),
                             fontSize: 11,
                           ),
                         ),
@@ -3627,7 +3931,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                         Text(
                           stat.$3,
                           style: const TextStyle(
-                            color: Color(0xFF9294A5),
+                            color: Color(0xFF858A7E),
                             fontSize: 10,
                           ),
                         ),
@@ -3665,7 +3969,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
               const SizedBox(height: 5),
               Text(
                 subtitle,
-                style: const TextStyle(fontSize: 12, color: Color(0xFF77798C)),
+                style: const TextStyle(fontSize: 12, color: Color(0xFF73786C)),
               ),
             ],
           ),
@@ -3676,7 +3980,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
           Text(
             action,
             style: const TextStyle(
-              color: Color(0xFF6254E8),
+              color: Color(0xFF536D4F),
               fontWeight: FontWeight.w700,
               fontSize: 12,
             ),
@@ -3692,28 +3996,28 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
         'subtitle': 'Python, Java, C++, SQL, DSA and more',
         'focus': 'Technology & programming',
         'icon': Icons.code_rounded,
-        'color': const Color(0xFF635BDB),
+        'color': const Color(0xFF536D4F),
       },
       {
         'title': 'Frameworks & tools',
         'subtitle': 'Flutter, React, Spring, Git, cloud and more',
         'focus': 'Frameworks & tools',
         'icon': Icons.widgets_outlined,
-        'color': const Color(0xFF0D9B78),
+        'color': const Color(0xFF536D4F),
       },
       {
         'title': 'Job roles & skills',
         'subtitle': 'Developer, analyst, designer, tester and more',
         'focus': 'Job role',
         'icon': Icons.badge_outlined,
-        'color': const Color(0xFF3478F6),
+        'color': const Color(0xFF6D8266),
       },
       {
         'title': 'Company interviews',
         'subtitle': 'Prepare around a target employer or job description',
         'focus': 'Company interview',
         'icon': Icons.business_outlined,
-        'color': const Color(0xFFEF8B35),
+        'color': const Color(0xFF9A7A46),
       },
       {
         'title': 'Aptitude & assessments',
@@ -3737,7 +4041,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(22),
-        border: Border.all(color: const Color(0xFFE6E9F2)),
+        border: Border.all(color: const Color(0xFFE4E5DB)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -3750,7 +4054,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
           const Text(
             'CareerPrep is for every candidate. Start with a suggested area or enter any topic you have in mind.',
             style: TextStyle(
-              color: Color(0xFF77798C),
+              color: Color(0xFF73786C),
               height: 1.5,
               fontSize: 13,
             ),
@@ -3810,7 +4114,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                             : Colors.white,
                         borderRadius: BorderRadius.circular(16),
                         border: Border.all(
-                          color: selected ? color : const Color(0xFFE6E9F2),
+                          color: selected ? color : const Color(0xFFE4E5DB),
                           width: selected ? 1.6 : 1,
                         ),
                       ),
@@ -3852,7 +4156,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                                   style: const TextStyle(
                                     fontSize: 11,
                                     height: 1.35,
-                                    color: Color(0xFF77798C),
+                                    color: Color(0xFF73786C),
                                   ),
                                 ),
                               ],
@@ -3940,7 +4244,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
             style: TextStyle(
               fontSize: 11,
               height: 1.45,
-              color: Color(0xFF77798C),
+              color: Color(0xFF73786C),
             ),
           ),
         ],
@@ -3990,14 +4294,14 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
               contentPadding: EdgeInsets.zero,
               controlAffinity: ListTileControlAffinity.leading,
               value: completed,
-              activeColor: const Color(0xFF6254E8),
+              activeColor: const Color(0xFF536D4F),
               title: Text(
                 resumeTasks[index],
                 style: TextStyle(
                   fontSize: 13,
                   decoration: completed ? TextDecoration.lineThrough : null,
                   color: completed
-                      ? const Color(0xFF9294A5)
+                      ? const Color(0xFF858A7E)
                       : const Color(0xFF292B3A),
                 ),
               ),
@@ -4025,7 +4329,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
               color: const Color(0xFFF0EEFF),
               borderRadius: BorderRadius.circular(12),
             ),
-            child: const Icon(Icons.quiz_outlined, color: Color(0xFF6254E8)),
+            child: const Icon(Icons.quiz_outlined, color: Color(0xFF536D4F)),
           ),
           title: Text(
             question.question,
@@ -4035,7 +4339,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
             padding: const EdgeInsets.only(top: 7),
             child: Text(
               '${question.category} • ${question.difficulty}',
-              style: const TextStyle(fontSize: 11, color: Color(0xFF77798C)),
+              style: const TextStyle(fontSize: 11, color: Color(0xFF73786C)),
             ),
           ),
           trailing: const Icon(Icons.arrow_forward_ios_rounded, size: 15),
@@ -4058,7 +4362,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
         const SizedBox(height: 8),
         const Text(
           'Explore interview questions and reveal answers when you are ready.',
-          style: TextStyle(color: Color(0xFF77798C), height: 1.5),
+          style: TextStyle(color: Color(0xFF73786C), height: 1.5),
         ),
         const SizedBox(height: 24),
         TextField(
@@ -4149,12 +4453,12 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                   _badge(
                     question.category,
                     const Color(0xFFF0EEFF),
-                    const Color(0xFF6254E8),
+                    const Color(0xFF536D4F),
                   ),
                   _badge(
                     question.difficulty,
-                    const Color(0xFFE5F7F0),
-                    const Color(0xFF0D9B78),
+                    const Color(0xFFE8EEE3),
+                    const Color(0xFF536D4F),
                   ),
                 ],
               ),
@@ -4174,13 +4478,13 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                 final isSelected = selectedOption == index;
                 final isCorrectOption = index == question.correctOptionIndex;
 
-                Color borderColor = const Color(0xFFEAECF3);
+                Color borderColor = const Color(0xFFE4E5DB);
                 Color backgroundColor = Colors.white;
                 Color textColor = const Color(0xFF292B3A);
 
                 if (hasAnswered && isCorrectOption) {
-                  borderColor = const Color(0xFF0D9B78);
-                  backgroundColor = const Color(0xFFE5F7F0);
+                  borderColor = const Color(0xFF536D4F);
+                  backgroundColor = const Color(0xFFE8EEE3);
                   textColor = const Color(0xFF087653);
                 } else if (hasAnswered && isSelected && !isCorrect) {
                   borderColor = const Color(0xFFD94040);
@@ -4222,7 +4526,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                           if (hasAnswered && isCorrectOption)
                             const Icon(
                               Icons.check_circle_rounded,
-                              color: Color(0xFF0D9B78),
+                              color: Color(0xFF536D4F),
                             )
                           else if (hasAnswered && isSelected && !isCorrect)
                             const Icon(
@@ -4244,7 +4548,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                   padding: const EdgeInsets.all(14),
                   decoration: BoxDecoration(
                     color: isCorrect
-                        ? const Color(0xFFE5F7F0)
+                        ? const Color(0xFFE8EEE3)
                         : const Color(0xFFFFF4E5),
                     borderRadius: BorderRadius.circular(12),
                   ),
@@ -4310,12 +4614,12 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                     Icon(
                       Icons.check_circle_rounded,
                       size: 16,
-                      color: Color(0xFF0D9B78),
+                      color: Color(0xFF536D4F),
                     ),
                     SizedBox(width: 6),
                     Text(
                       'Previously practiced',
-                      style: TextStyle(color: Color(0xFF0D9B78), fontSize: 12),
+                      style: TextStyle(color: Color(0xFF536D4F), fontSize: 12),
                     ),
                   ],
                 ),
@@ -4408,7 +4712,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
       padding: const EdgeInsets.all(22),
       decoration: BoxDecoration(
         gradient: const LinearGradient(
-          colors: [Color(0xFF6254E8), Color(0xFF897CF5)],
+          colors: [Color(0xFF536D4F), Color(0xFF897CF5)],
         ),
         borderRadius: BorderRadius.circular(20),
       ),
@@ -4517,14 +4821,14 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(18),
-        border: Border.all(color: const Color(0xFFEAECF3)),
+        border: Border.all(color: const Color(0xFFE4E5DB)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             children: [
-              const Icon(Icons.track_changes_rounded, color: Color(0xFF6254E8)),
+              const Icon(Icons.track_changes_rounded, color: Color(0xFF536D4F)),
               const SizedBox(width: 9),
               const Expanded(
                 child: Text(
@@ -4537,7 +4841,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
           const SizedBox(height: 6),
           const Text(
             'Recommendations are calculated locally from your practice completion and saved quiz scores.',
-            style: TextStyle(color: Color(0xFF77798C), height: 1.4),
+            style: TextStyle(color: Color(0xFF73786C), height: 1.4),
           ),
           const SizedBox(height: 14),
           ...weakest.map((insight) {
@@ -4564,7 +4868,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
               ),
               child: Row(
                 children: [
-                  const Icon(Icons.bolt_rounded, color: Color(0xFF6254E8)),
+                  const Icon(Icons.bolt_rounded, color: Color(0xFF536D4F)),
                   const SizedBox(width: 10),
                   Expanded(
                     child: Column(
@@ -4578,7 +4882,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                         Text(
                           detail,
                           style: const TextStyle(
-                            color: Color(0xFF77798C),
+                            color: Color(0xFF73786C),
                             fontSize: 12,
                             height: 1.4,
                           ),
@@ -4721,7 +5025,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                     _badge(
                       '${(progress * 100).round()}%',
                       const Color(0xFFF0EEFF),
-                      const Color(0xFF6254E8),
+                      const Color(0xFF536D4F),
                     ),
                   ],
                 ),
@@ -4732,7 +5036,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                     value: progress,
                     minHeight: 8,
                     backgroundColor: const Color(0xFFEEEAFB),
-                    color: const Color(0xFF6254E8),
+                    color: const Color(0xFF536D4F),
                   ),
                 ),
                 const SizedBox(height: 24),
@@ -4764,8 +5068,8 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                             : Colors.white,
                         side: BorderSide(
                           color: isSelected
-                              ? const Color(0xFF6254E8)
-                              : const Color(0xFFEAECF3),
+                              ? const Color(0xFF536D4F)
+                              : const Color(0xFFE4E5DB),
                           width: isSelected ? 2 : 1,
                         ),
                         shape: RoundedRectangleBorder(
@@ -4780,7 +5084,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
                               color: isSelected
-                                  ? const Color(0xFF6254E8)
+                                  ? const Color(0xFF536D4F)
                                   : const Color(0xFFF2F3F8),
                               borderRadius: BorderRadius.circular(9),
                             ),
@@ -4804,7 +5108,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                           if (isSelected)
                             const Icon(
                               Icons.check_circle_rounded,
-                              color: Color(0xFF6254E8),
+                              color: Color(0xFF536D4F),
                             ),
                         ],
                       ),
@@ -4846,7 +5150,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                 const SizedBox(height: 12),
                 const Text(
                   'You can skip a question and return to it before finishing.',
-                  style: TextStyle(color: Color(0xFF77798C), fontSize: 12),
+                  style: TextStyle(color: Color(0xFF73786C), fontSize: 12),
                 ),
               ],
             ),
@@ -4867,7 +5171,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
         const SizedBox(height: 8),
         const Text(
           'Choose your settings, attempt the questions, and get a score with answer explanations.',
-          style: TextStyle(color: Color(0xFF77798C), height: 1.5),
+          style: TextStyle(color: Color(0xFF73786C), height: 1.5),
         ),
         const SizedBox(height: 24),
         Card(
@@ -4990,12 +5294,12 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
         const SizedBox(height: 18),
         Row(
           children: [
-            const Icon(Icons.library_books_rounded, color: Color(0xFF6254E8)),
+            const Icon(Icons.library_books_rounded, color: Color(0xFF536D4F)),
             const SizedBox(width: 10),
             Expanded(
               child: Text(
                 '${questionBank.length} questions available across ${categories.length} categories.',
-                style: const TextStyle(color: Color(0xFF77798C)),
+                style: const TextStyle(color: Color(0xFF73786C)),
               ),
             ),
           ],
@@ -5027,7 +5331,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
         const SizedBox(height: 8),
         const Text(
           'Here is a summary of your performance.',
-          style: TextStyle(color: Color(0xFF77798C)),
+          style: TextStyle(color: Color(0xFF73786C)),
         ),
         const SizedBox(height: 22),
         Container(
@@ -5035,7 +5339,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
           padding: const EdgeInsets.all(28),
           decoration: BoxDecoration(
             gradient: const LinearGradient(
-              colors: [Color(0xFF6254E8), Color(0xFF897CF5)],
+              colors: [Color(0xFF536D4F), Color(0xFF897CF5)],
             ),
             borderRadius: BorderRadius.circular(22),
           ),
@@ -5082,7 +5386,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                 _quizResultStat(
                   'Correct',
                   _quizCorrectCount,
-                  const Color(0xFF0D9B78),
+                  const Color(0xFF536D4F),
                   width,
                 ),
                 _quizResultStat(
@@ -5094,7 +5398,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                 _quizResultStat(
                   'Unanswered',
                   _quizUnansweredCount,
-                  const Color(0xFF77798C),
+                  const Color(0xFF73786C),
                   width,
                 ),
               ],
@@ -5191,7 +5495,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                     Text(
                       'Question ${index + 1}',
                       style: const TextStyle(
-                        color: Color(0xFF6254E8),
+                        color: Color(0xFF536D4F),
                         fontWeight: FontWeight.w800,
                       ),
                     ),
@@ -5208,9 +5512,9 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                       'Your answer: ${skipped ? 'Not answered' : question.options[selected]}',
                       style: TextStyle(
                         color: skipped
-                            ? const Color(0xFF77798C)
+                            ? const Color(0xFF73786C)
                             : correct
-                            ? const Color(0xFF0D9B78)
+                            ? const Color(0xFF536D4F)
                             : const Color(0xFFD94040),
                         fontWeight: FontWeight.w700,
                       ),
@@ -5219,7 +5523,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                     Text(
                       'Correct answer: ${question.options[question.correctOptionIndex]}',
                       style: const TextStyle(
-                        color: Color(0xFF0D9B78),
+                        color: Color(0xFF536D4F),
                         fontWeight: FontWeight.w700,
                       ),
                     ),
@@ -5227,7 +5531,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                     Text(
                       question.explanation,
                       style: const TextStyle(
-                        color: Color(0xFF77798C),
+                        color: Color(0xFF73786C),
                         height: 1.5,
                       ),
                     ),
@@ -5261,7 +5565,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
         const SizedBox(height: 8),
         const Text(
           'Keep important questions handy for revision.',
-          style: TextStyle(color: Color(0xFF77798C)),
+          style: TextStyle(color: Color(0xFF73786C)),
         ),
         const SizedBox(height: 24),
         if (savedQuestions.isEmpty)
@@ -5309,7 +5613,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: const Color(0xFFEAECF3)),
+        border: Border.all(color: const Color(0xFFE4E5DB)),
       ),
       child: Row(
         children: [
@@ -5330,7 +5634,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                 Text(
                   title,
                   style: const TextStyle(
-                    color: Color(0xFF77798C),
+                    color: Color(0xFF73786C),
                     fontSize: 12,
                   ),
                 ),
@@ -5345,7 +5649,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                 Text(
                   subtitle,
                   style: const TextStyle(
-                    color: Color(0xFF9294A5),
+                    color: Color(0xFF858A7E),
                     fontSize: 11,
                   ),
                 ),
@@ -5364,7 +5668,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
         value: '$_totalQuizAttempts',
         subtitle: 'Completed quizzes',
         icon: Icons.quiz_rounded,
-        color: const Color(0xFF6254E8),
+        color: const Color(0xFF536D4F),
       ),
       _analyticsMetric(
         title: 'Average score',
@@ -5378,7 +5682,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
         value: '$_bestQuizScore%',
         subtitle: 'Personal best',
         icon: Icons.emoji_events_rounded,
-        color: const Color(0xFFEF8B35),
+        color: const Color(0xFF9A7A46),
       ),
     ];
 
@@ -5424,7 +5728,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(18),
-            border: Border.all(color: const Color(0xFFEAECF3)),
+            border: Border.all(color: const Color(0xFFE4E5DB)),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -5439,7 +5743,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                   padding: EdgeInsets.symmetric(vertical: 14),
                   child: Text(
                     'No quiz attempts yet. Complete a quiz to see your performance here.',
-                    style: TextStyle(color: Color(0xFF77798C)),
+                    style: TextStyle(color: Color(0xFF73786C)),
                   ),
                 )
               else
@@ -5460,7 +5764,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                           height: 42,
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
-                            color: const Color(0xFF6254E8)
+                            color: const Color(0xFF536D4F)
                                 .withValues(alpha: 0.10),
                             borderRadius: BorderRadius.circular(12),
                           ),
@@ -5468,7 +5772,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                             '$score%',
                             style: const TextStyle(
                               fontWeight: FontWeight.w800,
-                              color: Color(0xFF6254E8),
+                              color: Color(0xFF536D4F),
                             ),
                           ),
                         ),
@@ -5487,7 +5791,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                               Text(
                                 '$dateLabel · ${attempt['correct'] ?? 0}/${attempt['total'] ?? 0} correct',
                                 style: const TextStyle(
-                                  color: Color(0xFF77798C),
+                                  color: Color(0xFF73786C),
                                   fontSize: 12,
                                 ),
                               ),
@@ -5504,7 +5808,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                               backgroundColor: const Color(0xFFEEEAFB),
                               color: score >= 70
                                   ? const Color(0xFF249B76)
-                                  : const Color(0xFFEF8B35),
+                                  : const Color(0xFF9A7A46),
                             ),
                           ),
                         ),
@@ -5853,7 +6157,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
         const SizedBox(height: 8),
         const Text(
           'Compare your resume with a target job description and find keywords to review.',
-          style: TextStyle(color: Color(0xFF77798C), height: 1.5),
+          style: TextStyle(color: Color(0xFF73786C), height: 1.5),
         ),
         const SizedBox(height: 22),
         Container(
@@ -5862,7 +6166,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(18),
-            border: Border.all(color: const Color(0xFFEAECF3)),
+            border: Border.all(color: const Color(0xFFE4E5DB)),
           ),
           child: Wrap(
             crossAxisAlignment: WrapCrossAlignment.center,
@@ -5893,7 +6197,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
               const Text(
                 'PDF text is extracted locally in this app. Scanned image-only PDFs need OCR.',
                 style: TextStyle(
-                  color: Color(0xFF77798C),
+                  color: Color(0xFF73786C),
                   fontSize: 12,
                   height: 1.4,
                 ),
@@ -5951,7 +6255,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
             icon: const Icon(Icons.analytics_outlined),
             label: const Text('Analyze resume'),
             style: FilledButton.styleFrom(
-              backgroundColor: const Color(0xFF6254E8),
+              backgroundColor: const Color(0xFF536D4F),
             ),
           ),
         ),
@@ -5963,7 +6267,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: const Color(0xFFEAECF3)),
+              border: Border.all(color: const Color(0xFFE4E5DB)),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -5980,9 +6284,9 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                       height: 86,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: const Color(0xFF6254E8).withValues(alpha: 0.10),
+                        color: const Color(0xFF536D4F).withValues(alpha: 0.10),
                         border: Border.all(
-                          color: const Color(0xFF6254E8),
+                          color: const Color(0xFF536D4F),
                           width: 3,
                         ),
                       ),
@@ -5992,7 +6296,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                         style: const TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.w800,
-                          color: Color(0xFF6254E8),
+                          color: Color(0xFF536D4F),
                         ),
                       ),
                     ),
@@ -6009,7 +6313,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                           const Text(
                             'This is a basic keyword comparison, not a prediction of interview or hiring success.',
                             style: TextStyle(
-                              color: Color(0xFF77798C),
+                              color: Color(0xFF73786C),
                               height: 1.4,
                               fontSize: 12,
                             ),
@@ -6042,7 +6346,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                 _resumeKeywordGroup(
                   'Keywords found',
                   matched,
-                  const Color(0xFF0D9B78),
+                  const Color(0xFF536D4F),
                 ),
                 const SizedBox(height: 18),
                 _resumeKeywordGroup(
@@ -6061,7 +6365,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                       ? 'No missing keywords were detected by this rule-based comparison. Review the job description manually as well.'
                       : 'Review these ${missing.length} items against the role. Prioritize essential requirements, learn what you genuinely need, and add a skill to your resume only when you can support it with real experience.',
                   style: const TextStyle(
-                    color: Color(0xFF77798C),
+                    color: Color(0xFF73786C),
                     height: 1.45,
                   ),
                 ),
@@ -6096,7 +6400,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                 const Text(
                   'Questions generated from the skills and keywords detected above. These are rule-based prompts, not AI-generated answers.',
                   style: TextStyle(
-                    color: Color(0xFF77798C),
+                    color: Color(0xFF73786C),
                     height: 1.45,
                     fontSize: 12,
                   ),
@@ -6110,14 +6414,14 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                       children: [
                         CircleAvatar(
                           radius: 13,
-                          backgroundColor: const Color(0xFF6254E8)
+                          backgroundColor: const Color(0xFF536D4F)
                               .withValues(alpha: 0.10),
                           child: Text(
                             '${entry.key + 1}',
                             style: const TextStyle(
                               fontSize: 11,
                               fontWeight: FontWeight.w800,
-                              color: Color(0xFF6254E8),
+                              color: Color(0xFF536D4F),
                             ),
                           ),
                         ),
@@ -6165,7 +6469,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
         const SizedBox(height: 18),
         const Text(
           'Privacy note: resume text and job-description analysis run locally in this app. PDF text extraction also happens on your device.',
-          style: TextStyle(color: Color(0xFF77798C), fontSize: 12, height: 1.5),
+          style: TextStyle(color: Color(0xFF73786C), fontSize: 12, height: 1.5),
         ),
       ],
     );
@@ -6189,7 +6493,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
         mainAxisSize: MainAxisSize.min,
         children: [
           const SizedBox(width: 2),
-          Icon(icon, size: 24, color: const Color(0xFF6254E8)),
+          Icon(icon, size: 24, color: const Color(0xFF536D4F)),
           const SizedBox(width: 12),
           Flexible(
             child: Column(
@@ -6205,7 +6509,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                   style: const TextStyle(
                     fontSize: 22,
                     fontWeight: FontWeight.w800,
-                    color: Color(0xFF6254E8),
+                    color: Color(0xFF536D4F),
                   ),
                 ),
                 const SizedBox(height: 3),
@@ -6214,7 +6518,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                   style: const TextStyle(
                     fontSize: 11,
                     height: 1.35,
-                    color: Color(0xFF77798C),
+                    color: Color(0xFF73786C),
                   ),
                 ),
               ],
@@ -6264,7 +6568,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(18),
-        border: Border.all(color: const Color(0xFFEAECF3)),
+        border: Border.all(color: const Color(0xFFE4E5DB)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -6277,7 +6581,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
           const Text(
             'Rule-based checks for common resume sections. Review each suggestion and only include accurate information.',
             style: TextStyle(
-              color: Color(0xFF77798C),
+              color: Color(0xFF73786C),
               height: 1.4,
               fontSize: 12,
             ),
@@ -6288,14 +6592,14 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
             child: LinearProgressIndicator(
               value: _resumeQualityScore / 100,
               minHeight: 9,
-              backgroundColor: const Color(0xFFEAECF3),
-              color: const Color(0xFF6254E8),
+              backgroundColor: const Color(0xFFE4E5DB),
+              color: const Color(0xFF536D4F),
             ),
           ),
           const SizedBox(height: 6),
           Text(
             'Completeness estimate: $_resumeQualityScore% (${checks.where((check) => check.$3).length} of ${checks.length} checks shown below)',
-            style: const TextStyle(fontSize: 12, color: Color(0xFF77798C)),
+            style: const TextStyle(fontSize: 12, color: Color(0xFF73786C)),
           ),
           const SizedBox(height: 14),
           ...checks.map(
@@ -6309,7 +6613,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                         ? Icons.check_circle_rounded
                         : Icons.info_outline_rounded,
                     color: check.$3
-                        ? const Color(0xFF0D9B78)
+                        ? const Color(0xFF536D4F)
                         : const Color(0xFFD97706),
                     size: 19,
                   ),
@@ -6328,7 +6632,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                               ? 'Likely present in the resume text.'
                               : check.$2,
                           style: const TextStyle(
-                            color: Color(0xFF77798C),
+                            color: Color(0xFF73786C),
                             height: 1.35,
                             fontSize: 12,
                           ),
@@ -6362,14 +6666,14 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(18),
-        border: Border.all(color: const Color(0xFFEAECF3)),
+        border: Border.all(color: const Color(0xFFE4E5DB)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             children: [
-              Icon(icon, color: const Color(0xFF6254E8)),
+              Icon(icon, color: const Color(0xFF536D4F)),
               const SizedBox(width: 9),
               Expanded(
                 child: Text(
@@ -6385,7 +6689,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
           const SizedBox(height: 6),
           Text(
             subtitle,
-            style: const TextStyle(color: Color(0xFF77798C), fontSize: 12),
+            style: const TextStyle(color: Color(0xFF73786C), fontSize: 12),
           ),
           const SizedBox(height: 14),
           TextFormField(
@@ -6422,7 +6726,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
         if (words.isEmpty)
           const Text(
             'No keywords in this group.',
-            style: TextStyle(color: Color(0xFF77798C), fontSize: 12),
+            style: TextStyle(color: Color(0xFF73786C), fontSize: 12),
           )
         else
           Wrap(
@@ -6461,7 +6765,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Icon(icon, size: 18, color: const Color(0xFF6254E8)),
+          Icon(icon, size: 18, color: const Color(0xFF536D4F)),
           const SizedBox(width: 9),
           Expanded(
             child: Text(
@@ -6485,7 +6789,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
         const SizedBox(height: 8),
         const Text(
           'Every question you practice is a step forward.',
-          style: TextStyle(color: Color(0xFF77798C)),
+          style: TextStyle(color: Color(0xFF73786C)),
         ),
         const SizedBox(height: 24),
         _buildQuizAnalyticsSection(isDesktop),
@@ -6498,7 +6802,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(20),
-            border: Border.all(color: const Color(0xFFEAECF3)),
+            border: Border.all(color: const Color(0xFFE4E5DB)),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -6516,7 +6820,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                     style: const TextStyle(
                       fontSize: 38,
                       fontWeight: FontWeight.w800,
-                      color: Color(0xFF6254E8),
+                      color: Color(0xFF536D4F),
                     ),
                   ),
                   const SizedBox(width: 10),
@@ -6525,7 +6829,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                     child: Text(
                       '${answeredIds.length} of ${questionBank.length} questions practiced',
                       style: const TextStyle(
-                        color: Color(0xFF77798C),
+                        color: Color(0xFF73786C),
                         fontSize: 12,
                       ),
                     ),
@@ -6539,7 +6843,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                   value: learningProgress,
                   minHeight: 10,
                   backgroundColor: const Color(0xFFEEEAFB),
-                  color: const Color(0xFF6254E8),
+                  color: const Color(0xFF536D4F),
                 ),
               ),
             ],
@@ -6572,7 +6876,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(16),
-              border: Border.all(color: const Color(0xFFEAECF3)),
+              border: Border.all(color: const Color(0xFFE4E5DB)),
             ),
             child: Column(
               children: [
@@ -6589,7 +6893,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                     Text(
                       '$completed/$total',
                       style: const TextStyle(
-                        color: Color(0xFF77798C),
+                        color: Color(0xFF73786C),
                         fontSize: 12,
                       ),
                     ),
@@ -6630,14 +6934,14 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                   value: resumeProgress,
                   minHeight: 8,
                   borderRadius: BorderRadius.circular(8),
-                  color: const Color(0xFF0D9B78),
-                  backgroundColor: const Color(0xFFE5F7F0),
+                  color: const Color(0xFF536D4F),
+                  backgroundColor: const Color(0xFFE8EEE3),
                 ),
                 const SizedBox(height: 12),
                 Text(
                   '${completedTasks.length} of ${resumeTasks.length} resume tasks completed.',
                   style: const TextStyle(
-                    color: Color(0xFF77798C),
+                    color: Color(0xFF73786C),
                     fontSize: 12,
                   ),
                 ),
@@ -6662,11 +6966,11 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: const Color(0xFFEAECF3)),
+        border: Border.all(color: const Color(0xFFE4E5DB)),
       ),
       child: Column(
         children: [
-          Icon(icon, size: 48, color: const Color(0xFF6254E8)),
+          Icon(icon, size: 48, color: const Color(0xFF536D4F)),
           const SizedBox(height: 15),
           Text(
             title,
@@ -6676,7 +6980,7 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
           Text(
             description,
             textAlign: TextAlign.center,
-            style: const TextStyle(color: Color(0xFF77798C), height: 1.5),
+            style: const TextStyle(color: Color(0xFF73786C), height: 1.5),
           ),
           const SizedBox(height: 18),
           FilledButton(onPressed: onPressed, child: Text(buttonText)),
