@@ -2298,7 +2298,9 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                     style: TextStyle(
                       fontWeight: selected ? FontWeight.w700 : FontWeight.w500,
                       fontSize: 13,
-                      color: selected ? const Color(0xFF536D4F) : const Color(0xFF454A40),
+                      color: selected
+                          ? const Color(0xFF536D4F)
+                          : const Color(0xFF454A40),
                     ),
                   ),
                 ),
@@ -3425,23 +3427,67 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
     ];
 
     final roleSummaries = <Map<String, dynamic>>[
-      {'title': 'Software Developer', 'subtitle': 'Programming, DSA, OOP, projects and debugging.'},
-      {'title': 'Frontend Developer', 'subtitle': 'HTML, CSS, JavaScript, React, UI and accessibility.'},
-      {'title': 'Backend Developer', 'subtitle': 'APIs, databases, authentication and server-side basics.'},
-      {'title': 'Data Analyst', 'subtitle': 'SQL, data cleaning, statistics and visualisation.'},
-      {'title': 'AI / ML Engineer', 'subtitle': 'Python, datasets, model evaluation and ML fundamentals.'},
-      {'title': 'QA / Test Engineer', 'subtitle': 'Test cases, bug reports, regression and automation basics.'},
-      {'title': 'Mobile Developer', 'subtitle': 'App UI, state management, APIs, storage and testing.'},
-      {'title': 'Cloud / DevOps & Security', 'subtitle': 'Linux, networking, CI/CD, cloud and defensive security basics.'},
+      {
+        'title': 'Software Developer',
+        'subtitle': 'Programming, DSA, OOP, projects and debugging.',
+      },
+      {
+        'title': 'Frontend Developer',
+        'subtitle': 'HTML, CSS, JavaScript, React, UI and accessibility.',
+      },
+      {
+        'title': 'Backend Developer',
+        'subtitle': 'APIs, databases, authentication and server-side basics.',
+      },
+      {
+        'title': 'Data Analyst',
+        'subtitle': 'SQL, data cleaning, statistics and visualisation.',
+      },
+      {
+        'title': 'AI / ML Engineer',
+        'subtitle': 'Python, datasets, model evaluation and ML fundamentals.',
+      },
+      {
+        'title': 'QA / Test Engineer',
+        'subtitle':
+            'Test cases, bug reports, regression and automation basics.',
+      },
+      {
+        'title': 'Mobile Developer',
+        'subtitle': 'App UI, state management, APIs, storage and testing.',
+      },
+      {
+        'title': 'Cloud / DevOps & Security',
+        'subtitle':
+            'Linux, networking, CI/CD, cloud and defensive security basics.',
+      },
     ];
 
     final companySummaries = <Map<String, dynamic>>[
-      {'title': 'Google', 'subtitle': 'Use the target role description to guide coding and problem-solving prep.'},
-      {'title': 'Microsoft', 'subtitle': 'Review fundamentals, projects, collaboration and role-specific skills.'},
-      {'title': 'Amazon', 'subtitle': 'Practise technical fundamentals and structured behavioural examples.'},
-      {'title': 'TCS', 'subtitle': 'Check current eligibility and prepare relevant aptitude or technical topics.'},
-      {'title': 'Infosys', 'subtitle': 'Use the official job details to guide assessment and interview practice.'},
-      {'title': 'Accenture', 'subtitle': 'Review the role requirements and prepare communication and technical basics.'},
+      {
+        'title': 'Google',
+        'subtitle': 'Use the target role description to guide coding and problem-solving prep.',
+      },
+      {
+        'title': 'Microsoft',
+        'subtitle': 'Review fundamentals, projects, collaboration and role-specific skills.',
+      },
+      {
+        'title': 'Amazon',
+        'subtitle': 'Practise technical fundamentals and structured behavioural examples.',
+      },
+      {
+        'title': 'TCS',
+        'subtitle': 'Check current eligibility and prepare relevant aptitude or technical topics.',
+      },
+      {
+        'title': 'Infosys',
+        'subtitle': 'Use the official job details to guide assessment and interview practice.',
+      },
+      {
+        'title': 'Accenture',
+        'subtitle': 'Review the role requirements and prepare communication and technical basics.',
+      },
     ];
 
     return Column(
@@ -3458,7 +3504,11 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
         const SizedBox(height: 16),
         LayoutBuilder(
           builder: (context, constraints) {
-            final columns = constraints.maxWidth >= 850 ? 4 : constraints.maxWidth >= 520 ? 2 : 1;
+            final columns = constraints.maxWidth >= 850
+                ? 4
+                : constraints.maxWidth >= 520
+                ? 2
+                : 1;
             final items = <Map<String, dynamic>>[
               {
                 'title': 'Learn by subject',
@@ -3525,7 +3575,11 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
           onTap: (item) {
             final page = item['page'] as int;
             if (page == 1) {
-              openPractice(category: item['title'] == 'HR & Behavioural' ? 'HR' : 'Programming');
+              openPractice(
+                category: item['title'] == 'HR & Behavioural'
+                    ? 'HR'
+                    : 'Programming',
+              );
             } else {
               setState(() => selectedPage = page);
             }
@@ -3605,7 +3659,11 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
           child: const Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Icon(Icons.lightbulb_outline_rounded, color: Color(0xFF536D4F), size: 27),
+              Icon(
+                Icons.lightbulb_outline_rounded,
+                color: Color(0xFF536D4F),
+                size: 27,
+              ),
               SizedBox(width: 12),
               Expanded(
                 child: Text(
@@ -3654,18 +3712,41 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
             child: Icon(icon, color: const Color(0xFF536D4F)),
           ),
           const SizedBox(height: 12),
-          Text(title, style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w800, color: Color(0xFF24271F))),
+          Text(
+            title,
+            style: const TextStyle(
+              fontSize: 15,
+              fontWeight: FontWeight.w800,
+              color: Color(0xFF24271F),
+            ),
+          ),
           const SizedBox(height: 6),
           Expanded(
-            child: Text(description, style: const TextStyle(fontSize: 12, height: 1.45, color: Color(0xFF73786C))),
+            child: Text(
+              description,
+              style: const TextStyle(
+                fontSize: 12,
+                height: 1.45,
+                color: Color(0xFF73786C),
+              ),
+            ),
           ),
           TextButton(
             onPressed: onTap,
-            style: TextButton.styleFrom(foregroundColor: const Color(0xFF536D4F), padding: EdgeInsets.zero),
+            style: TextButton.styleFrom(
+              foregroundColor: const Color(0xFF536D4F),
+              padding: EdgeInsets.zero,
+            ),
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text(actionLabel, style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 12)),
+                Text(
+                  actionLabel,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.w700,
+                    fontSize: 12,
+                  ),
+                ),
                 const SizedBox(width: 5),
                 const Icon(Icons.arrow_forward_rounded, size: 15),
               ],
@@ -3682,7 +3763,11 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
   }) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        final columns = constraints.maxWidth >= 950 ? 4 : constraints.maxWidth >= 600 ? 3 : 1;
+        final columns = constraints.maxWidth >= 950
+            ? 4
+            : constraints.maxWidth >= 600
+            ? 3
+            : 1;
         return GridView.builder(
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
@@ -3720,15 +3805,43 @@ class _CareerPrepHomeState extends State<CareerPrepHome> {
                   children: [
                     Row(
                       children: [
-                        Icon(icons[title] ?? Icons.arrow_outward_rounded, size: 20, color: const Color(0xFF536D4F)),
+                        Icon(
+                          icons[title] ?? Icons.arrow_outward_rounded,
+                          size: 20,
+                          color: const Color(0xFF536D4F),
+                        ),
                         const Spacer(),
-                        const Icon(Icons.arrow_outward_rounded, size: 16, color: Color(0xFF92978A)),
+                        const Icon(
+                          Icons.arrow_outward_rounded,
+                          size: 16,
+                          color: Color(0xFF92978A),
+                        ),
                       ],
                     ),
                     const SizedBox(height: 12),
-                    Text(title, maxLines: 1, overflow: TextOverflow.ellipsis, style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 14, color: Color(0xFF24271F))),
+                    Text(
+                      title,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.w800,
+                        fontSize: 14,
+                        color: Color(0xFF24271F),
+                      ),
+                    ),
                     const SizedBox(height: 6),
-                    Expanded(child: Text(description, maxLines: 3, overflow: TextOverflow.ellipsis, style: const TextStyle(fontSize: 11, height: 1.4, color: Color(0xFF73786C)))),
+                    Expanded(
+                      child: Text(
+                        description,
+                        maxLines: 3,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(
+                          fontSize: 11,
+                          height: 1.4,
+                          color: Color(0xFF73786C),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
